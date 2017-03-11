@@ -1,0 +1,8 @@
+C:\Projects\DotaApi\CommandLineTools\bin\Debug\netcoreapp1.1\CommandLineTools.deps.json
+C:\Projects\DotaApi\CommandLineTools\bin\Debug\netcoreapp1.1\CommandLineTools.runtimeconfig.json
+C:\Projects\DotaApi\CommandLineTools\bin\Debug\netcoreapp1.1\CommandLineTools.runtimeconfig.dev.json
+C:\Projects\DotaApi\CommandLineTools\bin\Debug\netcoreapp1.1\CommandLineTools.dll
+C:\Projects\DotaApi\CommandLineTools\bin\Debug\netcoreapp1.1\CommandLineTools.pdb
+C:\Projects\DotaApi\CommandLineTools\obj\Debug\netcoreapp1.1\CommandLineTools.AssemblyInfo.cs
+C:\Projects\DotaApi\CommandLineTools\obj\Debug\netcoreapp1.1\CommandLineTools.dll
+C:\Projects\DotaApi\CommandLineTools\obj\Debug\netcoreapp1.1\CommandLineTools.pdb

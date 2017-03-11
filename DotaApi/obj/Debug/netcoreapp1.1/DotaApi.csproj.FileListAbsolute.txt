@@ -1,9 +1,0 @@
-C:\Projects\DotaApi\DotaApi\bin\Debug\netcoreapp1.1\DotaApi.deps.json
-C:\Projects\DotaApi\DotaApi\bin\Debug\netcoreapp1.1\DotaApi.runtimeconfig.json
-C:\Projects\DotaApi\DotaApi\bin\Debug\netcoreapp1.1\DotaApi.runtimeconfig.dev.json
-C:\Projects\DotaApi\DotaApi\bin\Debug\netcoreapp1.1\DotaApi.dll
-C:\Projects\DotaApi\DotaApi\bin\Debug\netcoreapp1.1\DotaApi.pdb
-C:\Projects\DotaApi\DotaApi\obj\Debug\netcoreapp1.1\DotaApi.csprojResolveAssemblyReference.cache
-C:\Projects\DotaApi\DotaApi\obj\Debug\netcoreapp1.1\DotaApi.AssemblyInfo.cs
-C:\Projects\DotaApi\DotaApi\obj\Debug\netcoreapp1.1\DotaApi.dll
-C:\Projects\DotaApi\DotaApi\obj\Debug\netcoreapp1.1\DotaApi.pdb

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26304.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaApi", "DotaApi\DotaApi.csproj", "{784B4C4D-3F2F-4A58-A270-68FCA8125988}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaApiCore", "DotaApiCore\DotaApiCore.csproj", "{6D0DA246-D347-4D1B-9C56-F03F3AC5225C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandLineTools", "CommandLineTools\CommandLineTools.csproj", "{ADD5EA07-6A85-46E6-9774-29A9424C1BCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{784B4C4D-3F2F-4A58-A270-68FCA8125988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{784B4C4D-3F2F-4A58-A270-68FCA8125988}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{784B4C4D-3F2F-4A58-A270-68FCA8125988}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{784B4C4D-3F2F-4A58-A270-68FCA8125988}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6D0DA246-D347-4D1B-9C56-F03F3AC5225C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6D0DA246-D347-4D1B-9C56-F03F3AC5225C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D0DA246-D347-4D1B-9C56-F03F3AC5225C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D0DA246-D347-4D1B-9C56-F03F3AC5225C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADD5EA07-6A85-46E6-9774-29A9424C1BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADD5EA07-6A85-46E6-9774-29A9424C1BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADD5EA07-6A85-46E6-9774-29A9424C1BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADD5EA07-6A85-46E6-9774-29A9424C1BCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

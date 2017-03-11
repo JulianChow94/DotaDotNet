@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace DotaApi
+namespace CommandLineTools
 {
-    public class CommandLineInterface
+    class Program
     {
         static void Main(string[] args)
         {

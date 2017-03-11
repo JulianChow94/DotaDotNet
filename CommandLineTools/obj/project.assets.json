@@ -7080,10 +7080,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\DotaApi\\DotaApi\\DotaApi.csproj",
-      "projectName": "DotaApi",
-      "projectPath": "C:\\Projects\\DotaApi\\DotaApi\\DotaApi.csproj",
-      "outputPath": "C:\\Projects\\DotaApi\\DotaApi\\obj\\",
+      "projectUniqueName": "C:\\Projects\\DotaApi\\CommandLineTools\\CommandLineTools.csproj",
+      "projectName": "CommandLineTools",
+      "projectPath": "C:\\Projects\\DotaApi\\CommandLineTools\\CommandLineTools.csproj",
+      "outputPath": "C:\\Projects\\DotaApi\\CommandLineTools\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

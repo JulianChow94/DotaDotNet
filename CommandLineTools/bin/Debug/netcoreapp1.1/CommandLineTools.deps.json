@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v1.1": {
-      "dotaapi/1.0.0": {
+      "commandlinetools/1.0.0": {
         "runtime": {
-          "DotaApi.dll": {}
+          "CommandLineTools.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "dotaapi/1.0.0": {
+    "commandlinetools/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
