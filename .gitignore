@@ -260,3 +260,8 @@ paket-files/
 __pycache__/
 *.pyc
 /DotaApiCore/Configuration/appconfig.xml
+/DotaApiCore/Configuration/APIKey.txt
+/CommandLineTools/bin
+/DotaApiCore/bin
+/DotaApiCore/obj
+/CommandLineTools/obj
