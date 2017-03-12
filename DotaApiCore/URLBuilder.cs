@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace DotaApiCore
 {
     /*
@@ -45,7 +42,7 @@ namespace DotaApiCore
             var requestUrl = baseUrl;
             requestUrl = requestUrl + "GetMatchHistory/V001/" + string.Format("?key={0}", apiKey);
 
-            requestUrl = requestUrl + string.Format("&accountId={0}&matches_requested=1", accountId);
+            requestUrl = requestUrl + string.Format("&account_Id={0}&matches_requested=1", accountId);
 
             return requestUrl;
         }

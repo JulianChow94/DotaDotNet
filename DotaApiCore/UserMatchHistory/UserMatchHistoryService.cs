@@ -16,7 +16,7 @@ namespace DotaApiCore.UserMatchHistory
 
         public async Task<UserMatchHistoryRequestResult> GetLatestMatchDetailsForUser(long accountId)
         {
-            var url = new RequestBuilder().BuildLatestUserMatchDetailRequest(accountId, _apiKey);
+            var url = new URLBuilder().BuildLatestUserMatchDetailRequest(accountId, _apiKey);
             var client = new HttpClient();
 
             var result = client.GetAsync(url).Result;
