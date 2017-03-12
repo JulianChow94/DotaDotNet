@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DotaApiCore
+﻿namespace DotaApiCore
 {
     /*
      * Class used to build HTTP requests to the Steam API. Should return whatever the Steam API returns.

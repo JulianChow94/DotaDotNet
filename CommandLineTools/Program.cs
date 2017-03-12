@@ -1,7 +1,7 @@
 ﻿using System;
 using DotaApiCore;
-using DotaApiCore.MatchHistory;
 using System.IO;
+using DotaApiCore.UserMatchHistory;
 
 namespace CommandLineTools
 {
@@ -17,7 +17,7 @@ namespace CommandLineTools
         {
             Console.WriteLine("API Key: " + _apiKey);
 
-            var matchHistoryService = new MatchHistoryService(_apiKey);
+            var matchHistoryService = new UserMatchHistoryService(_apiKey);
             var latestMatchHistory = matchHistoryService.GetLatestMatchDetailsForUser(accountId: 76561197992854119);
 
             Console.WriteLine(latestMatchHistory.Result);
