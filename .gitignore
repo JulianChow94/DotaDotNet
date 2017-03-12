@@ -265,3 +265,4 @@ __pycache__/
 /DotaApiCore/bin
 /DotaApiCore/obj
 /CommandLineTools/obj
+/.vs
