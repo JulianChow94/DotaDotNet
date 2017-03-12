@@ -1,5 +1,6 @@
 ﻿using System;
 using DotaApiCore;
+using DotaApiCore.MatchHistory;
 
 namespace CommandLineTools
 {
@@ -13,6 +14,13 @@ namespace CommandLineTools
             var authenticator = new WebApiAuthenticator();
             _apiKey = authenticator.GetWebApiKey(ApiKeyPath);
             Console.WriteLine(_apiKey);
+
+            var matchHistoryService = new MatchHistoryService(_apiKey);
+
+            var latestMatchHistory = matchHistoryService.GetLatestMatchDetailsForUser(accountId: 76561197992854119);
+
+            Console.WriteLine(latestMatchHistory.Result);
+
             Console.Read();
         }
     }
