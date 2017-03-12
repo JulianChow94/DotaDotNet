@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace DotaApiCore
+namespace DotaApiCore.Authentication
 {
     public class WebApiAuthenticator : IWebApiAuthenticator
     {

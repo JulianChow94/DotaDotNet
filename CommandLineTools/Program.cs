@@ -1,5 +1,6 @@
 ﻿using System;
 using DotaApiCore;
+using DotaApiCore.Authentication;
 using DotaApiCore.MatchHistory;
 
 namespace CommandLineTools
