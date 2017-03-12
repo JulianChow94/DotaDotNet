@@ -5,11 +5,11 @@ using System.Text;
 namespace DotaApiCore
 {
     /*
-     * Class used to build HTTP requests to the Steam API. Should return whatever the Steam API returns.
+     * FLAGGED FOR DELETION
      */
     public class RequestBuilder
     {
-        //TODO: Move to resx
+        //TODO: BaseURL(s) in external JSON file for modularity.
         public static string BaseUrl = "https://api.steampowered.com/IDOTA2Match_570/";
 
         public string BuildLatestUserMatchDetailRequest(long accountId, string apiKey)
