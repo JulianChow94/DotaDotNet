@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DotaApiCore
+﻿namespace DotaApiCore.Authentication
 {
     public interface IWebApiAuthenticator
     {
