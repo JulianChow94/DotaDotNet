@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DotaApiCore
+﻿namespace DotaApiCore
 {
     /*
      * Class used to build HTTP requests to the Steam API. Should return whatever the Steam API returns.
@@ -17,7 +13,7 @@ namespace DotaApiCore
             var requestUrl = BaseUrl;
             requestUrl = requestUrl + "GetMatchHistory/V001/" + string.Format("?key={0}", apiKey);
 
-            requestUrl = requestUrl + string.Format("&accountId={0}&matches_requested=1", accountId);
+            requestUrl = requestUrl + string.Format("&account_Id={0}&matches_requested=1", accountId);
 
             return requestUrl;
         }
