@@ -11,14 +11,14 @@ namespace CommandLineTools
     public class Program
     {
         private const string ApiKeyPath = "./Configuration/APIKey.txt";
-        private static string _apiKey = File.ReadAllText(ApiKeyPath);
+        private static readonly string ApiKey = File.ReadAllText(ApiKeyPath);
 
         static void Main(string[] args)
         {
-            Console.WriteLine("API Key: " + _apiKey);
+            Console.WriteLine("API Key: " + ApiKey);
 
-            var matchHistoryService = new UserMatchHistoryService(_apiKey);
-            var latestMatchHistory = matchHistoryService.GetLatestMatchDetailsForUser(accountId: 76561197992854119);
+            var matchHistoryService = new UserMatchHistoryService(ApiKey);
+            var latestMatchHistory = matchHistoryService.GetLatestMatchDetailsForUser(accountId: 32588391);
 
             Console.WriteLine(latestMatchHistory.Result);
 
