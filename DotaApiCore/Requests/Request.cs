@@ -1,7 +1,7 @@
 ﻿using System.Net.Http;
 using DotaApiCore.MatchHistory.Models;
 
-namespace DotaApiCore.MatchHistory.Requests
+namespace DotaApiCore.Requests
 {
     public abstract class Request
     {

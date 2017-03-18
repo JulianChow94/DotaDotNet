@@ -1,9 +1,10 @@
 ﻿using System.IO;
 using System.Net.Http;
 using DotaApiCore.MatchHistory.Models;
+using DotaApiCore.Requests;
 using Newtonsoft.Json.Linq;
 
-namespace DotaApiCore.MatchHistory.Requests
+namespace DotaApiCore.Requests
 {
     
     public class MatchHistoryRequest : Request
