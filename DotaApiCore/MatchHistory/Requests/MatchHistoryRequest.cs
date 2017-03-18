@@ -5,7 +5,7 @@ using Newtonsoft.Json.Linq;
 
 namespace DotaApiCore.MatchHistory.Requests
 {
-    // https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/?key=E42BD4E39D900957FE9BDC8706798DA3&account_id=76561197992854119&matches_requested=1
+    
     public class MatchHistoryRequest : Request
     {
         /* NOTE: LeagueID to be implemented as part of the "League sprint"
