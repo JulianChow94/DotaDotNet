@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using DotaApiCore.MatchHistory.Models;
-using DotaApiCore.MatchHistory.Requests;
+using DotaApiCore.Requests;
 using Newtonsoft.Json;
 
 namespace DotaApiCore.MatchHistory
