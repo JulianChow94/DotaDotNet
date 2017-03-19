@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 
-namespace DotaApiCore.UserMatchHistory.Models
+namespace DotaApiCore.MatchHistory.Models
 {
-    public class UserMatchHistoryResult
+    public class MatchHistoryResult
     {
         [JsonProperty("status")]
         public int Status { get; set; }

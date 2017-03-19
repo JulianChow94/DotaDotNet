@@ -1,13 +1,10 @@
 ﻿using System;
-using DotaApiCore;
+using System.Diagnostics;
 using System.IO;
-using DotaApiCore.UserMatchHistory;
+using DotaApiCore.MatchHistory;
 
 namespace CommandLineTools
 {
-    /*
-     * Test program for DotaAPICore
-     */
     public class Program
     {
         private const string ApiKeyPath = "./Configuration/APIKey.txt";
@@ -17,12 +14,12 @@ namespace CommandLineTools
         {
             Console.WriteLine("API Key: " + ApiKey);
 
-            var matchHistoryService = new UserMatchHistoryService(ApiKey);
-            var latestMatchHistory = matchHistoryService.GetLatestMatchDetailsForUser(accountId: 32588391);
+            var matchHistoryService = new MatchHistoryService(ApiKey);
+            var matchHistory = matchHistoryService.GetMatchHistory(accountId: 32588391, matchesRequested: 1);
 
-            Console.WriteLine(latestMatchHistory.Result);
+            Debug.Assert(matchHistory != null);
+            Debug.Assert(matchHistory.Result.Matches.Length == 1);
 
-            //Pause the output so it doesnt quit right away
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
             return;
