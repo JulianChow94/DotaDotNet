@@ -1,7 +1,6 @@
 ﻿using System.IO;
 using System.Net.Http;
 using DotaApiCore.MatchHistory.Models;
-using DotaApiCore.Requests;
 using Newtonsoft.Json.Linq;
 
 namespace DotaApiCore.Requests
@@ -9,10 +8,11 @@ namespace DotaApiCore.Requests
     
     public class MatchHistoryRequest : Request
     {
-        /* NOTE: LeagueID to be implemented as part of the "League sprint"
-            Omitting for now
-            Same situation for Tourney games only filter
-        */
+        /* 
+         * NOTE: LeagueID to be implemented as part of the "League sprint"
+         * Omitting for now
+         * Same situation for Tourney games only filter
+         */
 
         private string MatchHistoryBaseUrl { get; set; }
 

@@ -19,4 +19,8 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="MatchDetails\Models\" />
+  </ItemGroup>
+
 </Project>
