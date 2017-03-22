@@ -17,7 +17,7 @@ namespace DotaApiCore.MatchHistory.Models
 
         public DateTime StartTime
         {
-            get { return UnixTimeStampToDateTime(_startTime); }
+            get { return SharedFunctions.UnixTimeStampToDateTime(_startTime); }
         }
 
         [JsonProperty("lobby_type")]
@@ -31,10 +31,5 @@ namespace DotaApiCore.MatchHistory.Models
 
         [JsonProperty("players")]
         public Player[] Players { get; set; }
-
-        private DateTime UnixTimeStampToDateTime(int epoch)
-        {
-            return new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(epoch);
-        }
     }
 }

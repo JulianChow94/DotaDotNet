@@ -2,6 +2,7 @@
 
 namespace DotaApiCore.MatchHistory.Models
 {
+    //Subset of MatchDetails.Player
     public class Player
     {
         [JsonProperty("account_id")]

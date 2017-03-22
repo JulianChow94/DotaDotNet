@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 
 namespace DotaApiCore.MatchDetails.Models
 {
@@ -16,8 +17,13 @@ namespace DotaApiCore.MatchDetails.Models
         [JsonProperty("pre_game_duration")]
         public int PreGameDuration { get; set; }
 
-        [JsonProperty("start_time")] //Should be UNIX timestamp
-        public long StartTime { get; set; } //Anything else related to time in seconds
+        [JsonProperty("start_time")] //UNIX timestamp
+        private int _startTime { get; set; }   //Anything else related to time in seconds
+
+        public DateTime StartTime
+        {
+            get { return SharedFunctions.UnixTimeStampToDateTime(_startTime); }
+        } 
 
         [JsonProperty("match_id")]
         public long Matches { get; set; }
