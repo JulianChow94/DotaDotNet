@@ -1,7 +1,6 @@
-﻿using System.IO;
-using System.Net.Http;
+﻿using System.Net.Http;
+using System.Diagnostics;
 using DotaApiCore.MatchHistory.Models;
-using Newtonsoft.Json.Linq;
 
 namespace DotaApiCore.Requests
 {
@@ -45,11 +44,24 @@ namespace DotaApiCore.Requests
             StartAtMatchId = startingMatchId;
             MatchesRequested = matchesRequested;
 
-            var config = JObject.Parse(File.ReadAllText(@"C:\Projects\DotaApi\DotaApiCore\config.json"));
+            /*
+            //Some magic to open config.json, which is an embedded resource
+            var assembly = typeof(MatchHistoryRequest).GetTypeInfo().Assembly;
+            Stream resource = assembly.GetManifestResourceStream("config.json");
+
+            var config = JObject.Parse(resource.ToString());
+            //var config = JObject.Parse(File.ReadAllText(@"C:\Projects\DotaApi\DotaApiCore\config.json"));
             var urlConfig = config.ToObject<UrlConfiguration>();
+           
             MatchHistoryBaseUrl = InitializeUrl(urlConfig);
+            */
+
+            MatchHistoryBaseUrl = SharedLib.Strings.DotaApiBaseUrl + 
+                SharedLib.Strings.GetMatchHistoryExtension + 
+                string.Format("?key={0}", ApiKey);
         }
 
+        //Probably not needed anymore
         protected sealed override string InitializeUrl(UrlConfiguration urlConfig)
         {
            return urlConfig.BaseUrl + urlConfig.GetMatchHistoryExtension + string.Format("?key={0}", ApiKey);
@@ -58,6 +70,7 @@ namespace DotaApiCore.Requests
         public override HttpResponseMessage SendRequest()
         {
             var requestUrl = BuildUrlParameters(MatchHistoryBaseUrl);
+            Debug.WriteLine(requestUrl);
 
             var client = new HttpClient();
             var result = client.GetAsync(requestUrl).Result;
