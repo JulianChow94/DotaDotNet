@@ -71,7 +71,7 @@ namespace DotaApiCore.MatchDetails.Models
         [JsonProperty("leagueid")]
         public int LeagueID { get; set; }
 
-        [JsonProperty("postive_votes")]
+        [JsonProperty("positive_votes")]
         public int PositiveVotes { get; set; }
 
         [JsonProperty("negative_votes")]
