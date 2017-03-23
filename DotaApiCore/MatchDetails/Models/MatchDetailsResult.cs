@@ -18,12 +18,12 @@ namespace DotaApiCore.MatchDetails.Models
         public int PreGameDuration { get; set; }
 
         [JsonProperty("start_time")] //UNIX timestamp
-        private int _startTime { get; set; }   //Anything else related to time in seconds
+        private int _startTime { get; set; } //Anything else related to time in seconds
 
         public DateTime StartTime
         {
             get { return SharedFunctions.UnixTimeStampToDateTime(_startTime); }
-        } 
+        }
 
         [JsonProperty("match_id")]
         public long Matches { get; set; }

@@ -1,7 +1,7 @@
-﻿using System.Threading.Tasks;
-using DotaApiCore.MatchHistory.Models;
+﻿using DotaApiCore.MatchHistory.Models;
 using DotaApiCore.Requests;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace DotaApiCore.MatchHistory
 {
@@ -14,11 +14,11 @@ namespace DotaApiCore.MatchHistory
             _apiKey = apiKey;
         }
 
-        public MatchHistoryRequestResult GetMatchHistory(long? accountId = null, 
+        public MatchHistoryRequestResult GetMatchHistory(long? accountId = null,
             int? heroId = null, int? gameMode = null, int? skill = null,
             int? minPlayers = null, long? startingMatchId = null, int? matchesRequested = 100)
         {
-            var matchHistoryRequest = new MatchHistoryRequest(_apiKey, accountId, heroId, gameMode, 
+            var matchHistoryRequest = new MatchHistoryRequest(_apiKey, accountId, heroId, gameMode,
                 skill, minPlayers, startingMatchId, matchesRequested);
 
             var responseBody = SendAndValidateRequest(matchHistoryRequest);
@@ -39,4 +39,3 @@ namespace DotaApiCore.MatchHistory
         }
     }
 }
-    

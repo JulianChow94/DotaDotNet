@@ -1,13 +1,11 @@
-﻿using System.Net.Http;
-using System.Diagnostics;
-using DotaApiCore.MatchHistory.Models;
+﻿using System.Diagnostics;
+using System.Net.Http;
 
 namespace DotaApiCore.Requests
 {
-    
     public class MatchHistoryRequest : Request
     {
-        /* 
+        /*
          * NOTE: LeagueID to be implemented as part of the "League sprint"
          * Omitting for now
          * Same situation for Tourney games only filter
@@ -32,7 +30,7 @@ namespace DotaApiCore.Requests
 
         public int? MatchesRequested { get; set; }
 
-        public MatchHistoryRequest(string apiKey, long? accountId = null, int? heroId = null, int? gameMode = null, int? skill = null, 
+        public MatchHistoryRequest(string apiKey, long? accountId = null, int? heroId = null, int? gameMode = null, int? skill = null,
             int? minPlayers = null, long? startingMatchId = null, int? matchesRequested = 100)
         {
             ApiKey = apiKey;
@@ -43,8 +41,8 @@ namespace DotaApiCore.Requests
             MinimumPlayers = minPlayers;
             StartAtMatchId = startingMatchId;
             MatchesRequested = matchesRequested;
-            MatchHistoryBaseUrl = SharedLib.Strings.DotaApiBaseUrl + 
-                SharedLib.Strings.GetMatchHistoryExtension + 
+            MatchHistoryBaseUrl = SharedLib.Strings.DotaApiBaseUrl +
+                SharedLib.Strings.GetMatchHistoryExtension +
                 string.Format("?key={0}", ApiKey);
         }
 

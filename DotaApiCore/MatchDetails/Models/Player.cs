@@ -5,7 +5,7 @@ namespace DotaApiCore.MatchDetails.Models
     //The player class in MatchHistory is a subset of of the stuff here
     public class Player : MatchHistory.Models.Player
     {
-        [JsonProperty ("item_0")]
+        [JsonProperty("item_0")]
         public int Item0 { get; set; }
 
         [JsonProperty("item_1")]

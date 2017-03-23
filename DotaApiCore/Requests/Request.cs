@@ -1,5 +1,4 @@
 ﻿using System.Net.Http;
-using DotaApiCore.MatchHistory.Models;
 
 namespace DotaApiCore.Requests
 {

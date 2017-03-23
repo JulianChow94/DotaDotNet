@@ -1,7 +1,7 @@
-﻿using System;
+﻿using DotaApiCore.MatchHistory;
+using System;
 using System.Diagnostics;
 using System.IO;
-using DotaApiCore.MatchHistory;
 
 namespace CommandLineTools
 {
@@ -10,7 +10,7 @@ namespace CommandLineTools
         private const string ApiKeyPath = "./Configuration/APIKey.txt";
         private static readonly string ApiKey = File.ReadAllText(ApiKeyPath);
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("API Key: " + ApiKey);
 

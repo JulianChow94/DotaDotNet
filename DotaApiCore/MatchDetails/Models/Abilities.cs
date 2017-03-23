@@ -4,7 +4,7 @@ namespace DotaApiCore.MatchDetails.Models
 {
     public class Abilities
     {
-        [JsonProperty ("ability")]
+        [JsonProperty("ability")]
         public int Ability { get; set; }
 
         [JsonProperty("time")]
