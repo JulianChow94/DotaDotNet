@@ -8,7 +8,5 @@ namespace DotaApiCore.Requests
         public string ApiKey { get; set; }
 
         public abstract HttpResponseMessage SendRequest();
-
-        protected abstract string InitializeUrl(UrlConfiguration urlConfig);
     }
 }

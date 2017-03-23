@@ -43,28 +43,9 @@ namespace DotaApiCore.Requests
             MinimumPlayers = minPlayers;
             StartAtMatchId = startingMatchId;
             MatchesRequested = matchesRequested;
-
-            /*
-            //Some magic to open config.json, which is an embedded resource
-            var assembly = typeof(MatchHistoryRequest).GetTypeInfo().Assembly;
-            Stream resource = assembly.GetManifestResourceStream("config.json");
-
-            var config = JObject.Parse(resource.ToString());
-            //var config = JObject.Parse(File.ReadAllText(@"C:\Projects\DotaApi\DotaApiCore\config.json"));
-            var urlConfig = config.ToObject<UrlConfiguration>();
-           
-            MatchHistoryBaseUrl = InitializeUrl(urlConfig);
-            */
-
             MatchHistoryBaseUrl = SharedLib.Strings.DotaApiBaseUrl + 
                 SharedLib.Strings.GetMatchHistoryExtension + 
                 string.Format("?key={0}", ApiKey);
-        }
-
-        //Probably not needed anymore
-        protected sealed override string InitializeUrl(UrlConfiguration urlConfig)
-        {
-           return urlConfig.BaseUrl + urlConfig.GetMatchHistoryExtension + string.Format("?key={0}", ApiKey);
         }
 
         public override HttpResponseMessage SendRequest()

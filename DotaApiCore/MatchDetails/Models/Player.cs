@@ -5,7 +5,6 @@ namespace DotaApiCore.MatchDetails.Models
     //The player class in MatchHistory is a subset of of the stuff here
     public class Player : MatchHistory.Models.Player
     {
-        //Contains itemid. 0 means no item
         [JsonProperty ("item_0")]
         public int Item0 { get; set; }
 
@@ -42,19 +41,10 @@ namespace DotaApiCore.MatchDetails.Models
         [JsonProperty("assists")]
         public int Assists { get; set; }
 
-        /*
-            0, NONE: Player finished match with no abandon
-            1, DISCONNECTED: Player disconnected from the match without an abandon
-            2, DISCONNECTED_TOO_LONG: Player was disconnected from the match for greater than 5 minutes and was assessed with an abandon
-            3, ABANDONED: Player disconnected, clicked leave, and abandoned the game
-            4, AFK: Player was assessed with an abandon after being idle in the game for too long
-            5, NEVER_CONNECTED: Player never connected to the game, but was not given an abandon
-            6, NEVER_CONNECTED_TOO_LONG: Player took too long to connect and never connected, but no abandon was given
-         */
         [JsonProperty("leaver_status")]
         public int LeaverStatus { get; set; }
 
-        [JsonProperty("last_hits")] //CS LUL
+        [JsonProperty("last_hits")]
         public int LastHits { get; set; }
 
         [JsonProperty("denies")]
@@ -70,7 +60,6 @@ namespace DotaApiCore.MatchDetails.Models
         public int Level { get; set; }
 
         //Newer properties that may not exist in older matchIDs
-
         [JsonProperty("hero_damage")]
         public int HeroDamage { get; set; }
 
