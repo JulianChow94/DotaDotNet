@@ -1,18 +1,15 @@
-﻿using System.IO;
+﻿using System.Diagnostics;
 using System.Net.Http;
-using DotaApiCore.MatchHistory.Models;
-using DotaApiCore.Requests;
-using Newtonsoft.Json.Linq;
 
 namespace DotaApiCore.Requests
 {
-    
     public class MatchHistoryRequest : Request
     {
-        /* NOTE: LeagueID to be implemented as part of the "League sprint"
-            Omitting for now
-            Same situation for Tourney games only filter
-        */
+        /*
+         * NOTE: LeagueID to be implemented as part of the "League sprint"
+         * Omitting for now
+         * Same situation for Tourney games only filter
+         */
 
         private string MatchHistoryBaseUrl { get; set; }
 
@@ -33,7 +30,7 @@ namespace DotaApiCore.Requests
 
         public int? MatchesRequested { get; set; }
 
-        public MatchHistoryRequest(string apiKey, long? accountId = null, int? heroId = null, int? gameMode = null, int? skill = null, 
+        public MatchHistoryRequest(string apiKey, long? accountId = null, int? heroId = null, int? gameMode = null, int? skill = null,
             int? minPlayers = null, long? startingMatchId = null, int? matchesRequested = 100)
         {
             ApiKey = apiKey;
@@ -44,20 +41,15 @@ namespace DotaApiCore.Requests
             MinimumPlayers = minPlayers;
             StartAtMatchId = startingMatchId;
             MatchesRequested = matchesRequested;
-
-            var config = JObject.Parse(File.ReadAllText(@"C:\Projects\DotaApi\DotaApiCore\config.json"));
-            var urlConfig = config.ToObject<UrlConfiguration>();
-            MatchHistoryBaseUrl = InitializeUrl(urlConfig);
-        }
-
-        protected sealed override string InitializeUrl(UrlConfiguration urlConfig)
-        {
-           return urlConfig.BaseUrl + urlConfig.GetMatchHistoryExtension + string.Format("?key={0}", ApiKey);
+            MatchHistoryBaseUrl = SharedLib.Strings.DotaApiBaseUrl +
+                SharedLib.Strings.GetMatchHistoryExtension +
+                string.Format("?key={0}", ApiKey);
         }
 
         public override HttpResponseMessage SendRequest()
         {
             var requestUrl = BuildUrlParameters(MatchHistoryBaseUrl);
+            Debug.WriteLine(requestUrl);
 
             var client = new HttpClient();
             var result = client.GetAsync(requestUrl).Result;

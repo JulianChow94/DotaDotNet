@@ -1,4 +1,5 @@
 {
   "DotaApiBaseUrl": "https://api.steampowered.com/IDOTA2Match_570/",
-  "GetMatchHistoryExtension": "GetMatchHistory/V001/"
+  "GetMatchHistoryExtension": "GetMatchHistory/V001/",
+  "GetMatchDetailsExtension": "GetMatchDetails/V001/"
 }
