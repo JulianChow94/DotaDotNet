@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 
+//Temp test program since there are no unit tests yet
 namespace CommandLineTools
 {
     public class Program

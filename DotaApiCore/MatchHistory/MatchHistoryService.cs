@@ -15,7 +15,8 @@ namespace DotaApiCore.MatchHistory
 
         public MatchHistoryRequestResult GetMatchHistory(long? accountId = null,
             int? heroId = null, int? gameMode = null, int? skill = null,
-            int? minPlayers = null, long? startingMatchId = null, int? matchesRequested = 100)
+            int? minPlayers = null, long? startingMatchId = null,
+            int? matchesRequested = 100)
         {
             var matchHistoryRequest = new MatchHistoryRequest(_apiKey, accountId, heroId, gameMode,
                 skill, minPlayers, startingMatchId, matchesRequested);
