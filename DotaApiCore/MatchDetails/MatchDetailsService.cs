@@ -1,7 +1,6 @@
 ﻿using DotaApiCore.MatchDetails.Models;
 using DotaApiCore.Requests;
 using Newtonsoft.Json;
-using System.Threading.Tasks;
 
 namespace DotaApiCore.MatchDetails
 {

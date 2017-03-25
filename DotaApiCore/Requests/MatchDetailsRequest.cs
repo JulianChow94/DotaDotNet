@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net.Http;
-using System.Text;
 
 namespace DotaApiCore.Requests
 {
@@ -25,6 +24,7 @@ namespace DotaApiCore.Requests
 
         public override HttpResponseMessage SendRequest()
         {
+            Debug.WriteLine(MatchDetailsURL);
             var client = new HttpClient();
             return client.GetAsync(MatchDetailsURL).Result;
         }
