@@ -1,7 +1,6 @@
 ﻿using DotaApiCore.MatchHistory.Models;
 using DotaApiCore.Requests;
 using Newtonsoft.Json;
-using System.Threading.Tasks;
 
 namespace DotaApiCore.MatchHistory
 {
@@ -21,21 +20,11 @@ namespace DotaApiCore.MatchHistory
             var matchHistoryRequest = new MatchHistoryRequest(_apiKey, accountId, heroId, gameMode,
                 skill, minPlayers, startingMatchId, matchesRequested);
 
-            var responseBody = SendAndValidateRequest(matchHistoryRequest);
+            var responseBody = SharedFunctions.SendAndValidateRequest(matchHistoryRequest);
 
             var results = JsonConvert.DeserializeObject<MatchHistoryRequestResult>(responseBody.Result);
 
             return results;
-        }
-
-        private static async Task<string> SendAndValidateRequest(Request matchHistoryRequest)
-        {
-            var result = matchHistoryRequest.SendRequest();
-            result.EnsureSuccessStatusCode();
-
-            var responseBody = await result.Content.ReadAsStringAsync();
-
-            return responseBody;
         }
     }
 }
