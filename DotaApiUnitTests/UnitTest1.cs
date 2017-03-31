@@ -1,4 +1,6 @@
 
+using DotaApiCore.MatchHistory;
+
 namespace DotaApiUnitTests
 {
 
@@ -6,6 +8,7 @@ namespace DotaApiUnitTests
     {
         public void TestMethod1()
         {
+            MatchHistoryService x = new MatchHistoryService();
         }
     }
 }

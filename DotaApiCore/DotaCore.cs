@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using DotaApiCore.MatchHistory;
 using DotaApiCore.MatchHistory.Models;
 using DotaApiCore.Requests;
 using DotaApiCore.SharedLib.ServiceContainer;
 using Microsoft.Extensions.DependencyInjection;
+
+[assembly: InternalsVisibleTo("DotaApiUnitTests")]
 
 namespace DotaApiCore
 {

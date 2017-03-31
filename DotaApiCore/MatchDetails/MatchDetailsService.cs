@@ -1,4 +1,5 @@
-﻿using DotaApiCore.MatchDetails.Models;
+﻿using System.Runtime.CompilerServices;
+using DotaApiCore.MatchDetails.Models;
 using DotaApiCore.Requests;
 using DotaApiCore.SharedLib;
 using Newtonsoft.Json;
