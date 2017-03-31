@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace DotaApiCore
+namespace DotaApiCore.SharedLib
 {
-    public static class SharedFunctions
+    internal static class SharedFunctions
     {
         public static DateTime UnixTimeStampToDateTime(int epoch)
         {

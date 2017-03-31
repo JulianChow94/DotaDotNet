@@ -2,6 +2,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using DotaApiCore;
 
 namespace CommandLineTools
 {
@@ -14,11 +15,11 @@ namespace CommandLineTools
         {
             Console.WriteLine("API Key: " + ApiKey);
 
-            var matchHistoryService = new MatchHistoryService(ApiKey);
-            var matchHistory = matchHistoryService.GetMatchHistory(accountId: 32588391, matchesRequested: 1);
+            var lib = new DotaCore(ApiKey);
+            var matchHistory = lib.GetMatchHistory();
 
             Debug.Assert(matchHistory != null);
-            Debug.Assert(matchHistory.Result.Matches.Length == 1);
+            Debug.Assert(matchHistory.Matches.Length == 1);
 
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();

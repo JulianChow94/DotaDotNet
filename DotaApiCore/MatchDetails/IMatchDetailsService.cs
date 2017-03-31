@@ -2,7 +2,7 @@
 
 namespace DotaApiCore.MatchDetails
 {
-    public interface IMatchDetailsService
+    internal interface IMatchDetailsService
     {
         MatchDetailsRequestResult GetMatchDetails(long? matchId = null);
     }

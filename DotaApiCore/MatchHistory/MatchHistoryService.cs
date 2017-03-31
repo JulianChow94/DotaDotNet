@@ -1,16 +1,19 @@
-﻿using DotaApiCore.MatchHistory.Models;
+﻿using System.Net.Http;
+using DotaApiCore.MatchHistory.Models;
 using DotaApiCore.Requests;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 
 namespace DotaApiCore.MatchHistory
 {
-    public class MatchHistoryService : IMatchHistoryService
+    internal class MatchHistoryService : IMatchHistoryService
     {
         private readonly string _apiKey;
+        private readonly IHttpHandler _client;
 
-        public MatchHistoryService(string apiKey)
+        public MatchHistoryService(IHttpHandler handler, string apiKey)
         {
+            _client = handler;
             _apiKey = apiKey;
         }
 
@@ -28,14 +31,21 @@ namespace DotaApiCore.MatchHistory
             return results;
         }
 
-        private static async Task<string> SendAndValidateRequest(Request matchHistoryRequest)
+        private async Task<string> SendAndValidateRequest(MatchHistoryRequest matchHistoryRequest)
         {
-            var result = matchHistoryRequest.SendRequest();
+            var result = SendRequest(matchHistoryRequest.RequestUrl);
             result.EnsureSuccessStatusCode();
 
             var responseBody = await result.Content.ReadAsStringAsync();
 
             return responseBody;
+        }
+
+        public HttpResponseMessage SendRequest(string requestUrl)
+        {
+            var result = _client.GetAsync(requestUrl).Result;
+
+            return result;
         }
     }
 }
