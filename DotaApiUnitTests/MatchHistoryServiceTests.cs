@@ -76,11 +76,5 @@ namespace DotaApiUnitTests
             Assert.AreEqual(result.ResultsRemaining, 0);
             Assert.AreEqual(result.TotalResults, 0);
         }
-
-        [TestMethod]
-        public void FailingTest()
-        {
-            Assert.IsNull("hi");
-        }
     }
 }
