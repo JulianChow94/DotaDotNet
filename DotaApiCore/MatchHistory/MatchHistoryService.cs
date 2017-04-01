@@ -28,24 +28,21 @@ namespace DotaApiCore.MatchHistory
 
             var responseBody = SendAndValidateRequest(matchHistoryRequest);
 
-            var results = JsonConvert.DeserializeObject<MatchHistoryRequestResult>(responseBody.Result);
+            var results = JsonConvert.DeserializeObject<MatchHistoryRequestResult>(responseBody);
 
             return results;
         }
 
-        private async Task<string> SendAndValidateRequest(MatchHistoryRequest matchHistoryRequest)
+        private string SendAndValidateRequest(MatchHistoryRequest matchHistoryRequest)
         {
             var result = SendRequest(matchHistoryRequest.RequestUrl);
-            result.EnsureSuccessStatusCode();
 
-            var responseBody = await result.Content.ReadAsStringAsync();
-
-            return responseBody;
+            return result;
         }
 
-        public HttpResponseMessage SendRequest(string requestUrl)
+        public string SendRequest(string requestUrl)
         {
-            var result = _client.GetAsync(requestUrl).Result;
+            var result = _client.SendRequest(requestUrl);
 
             return result;
         }

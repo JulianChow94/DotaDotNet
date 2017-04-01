@@ -7,24 +7,26 @@ namespace DotaApiCore.Requests
     {
         private readonly HttpClient _client = new HttpClient();
 
-        public HttpResponseMessage Get(string url)
+        public string SendRequest(string url)
         {
-            return GetAsync(url).Result;
+            var result = Get(url);
+            result.EnsureSuccessStatusCode();
+
+            var responseBody = ReadResponse(result).Result;
+
+            return responseBody;
         }
 
-        public HttpResponseMessage Post(string url, HttpContent content)
+        private HttpResponseMessage Get(string url)
         {
-            return PostAsync(url, content).Result;
+            var result = _client.GetAsync(url).Result;
+            return result;
         }
 
-        public async Task<HttpResponseMessage> GetAsync(string url)
+        private static async Task<string> ReadResponse(HttpResponseMessage response)
         {
-            return await _client.GetAsync(url);
-        }
-
-        public async Task<HttpResponseMessage> PostAsync(string url, HttpContent content)
-        {
-            return await _client.PostAsync(url, content);
+            var responseBody = await response.Content.ReadAsStringAsync();
+            return responseBody;
         }
     }
 }
