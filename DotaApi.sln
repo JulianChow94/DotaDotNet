@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26304.0
+VisualStudioVersion = 15.0.26315.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaApiCore", "DotaApiCore\DotaApiCore.csproj", "{6D0DA246-D347-4D1B-9C56-F03F3AC5225C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandLineTools", "CommandLineTools\CommandLineTools.csproj", "{ADD5EA07-6A85-46E6-9774-29A9424C1BCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaApiUnitTests", "DotaApiUnitTests\DotaApiUnitTests.csproj", "{FDDF5B42-AFBF-41C9-B611-5AF27742D9B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{ADD5EA07-6A85-46E6-9774-29A9424C1BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADD5EA07-6A85-46E6-9774-29A9424C1BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADD5EA07-6A85-46E6-9774-29A9424C1BCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDDF5B42-AFBF-41C9-B611-5AF27742D9B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDDF5B42-AFBF-41C9-B611-5AF27742D9B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDDF5B42-AFBF-41C9-B611-5AF27742D9B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDDF5B42-AFBF-41C9-B611-5AF27742D9B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
