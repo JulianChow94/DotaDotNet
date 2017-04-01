@@ -63,7 +63,7 @@ namespace DotaApiUnitTests
         [TestMethod]
         public void GetMatchHistory_InvalidAccountId_MapsErrorResponse()
         {
-            _httpClientMock.Setup(x => x.SendRequest(It.IsAny<string>()))
+            _httpClientMock.Setup(client => client.SendRequest(It.IsAny<string>()))
                 .Returns(MatchHistoryServiceMockData.NotFound);
 
             var service = new MatchHistoryService(_httpClientMock.Object, MockApiKey);

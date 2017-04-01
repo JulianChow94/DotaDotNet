@@ -12,10 +12,10 @@ namespace CommandLineTools
 
         public static void Main(string[] args)
         {
-            Console.WriteLine("API Key: " + ApiKey);
+            //Console.WriteLine("API Key: " + ApiKey);
 
             var lib = new DotaCore(ApiKey);
-            var matchHistory = lib.GetMatchHistory(accountId: 76561197992854119);
+            var matchHistory = lib.GetMatchHistory(accountId: 76561197992854119, matchesRequested: 1);
 
             Debug.Assert(matchHistory != null);
             Debug.Assert(matchHistory.Matches.Length == 1);
