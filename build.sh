@@ -1,2 +1,4 @@
 dotnet restore && dotnet build
-dotnet test DotaApiUnitTests\DotaApiUnitTests.csproj
+cd DotaApiUnitTests
+echo "***RUN DOTNET TEST***"
+dotnet test
