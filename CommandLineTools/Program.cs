@@ -1,11 +1,8 @@
-﻿using DotaApiCore.MatchDetails;
-using DotaApiCore.MatchHistory;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
 using DotaApiCore;
 
-//Temp test program since there are no unit tests yet
 namespace CommandLineTools
 {
     public class Program
@@ -18,7 +15,7 @@ namespace CommandLineTools
             Console.WriteLine("API Key: " + ApiKey);
 
             var lib = new DotaCore(ApiKey);
-            var matchHistory = lib.GetMatchHistory();
+            var matchHistory = lib.GetMatchHistory(accountId: 76561197992854119);
 
             Debug.Assert(matchHistory != null);
             Debug.Assert(matchHistory.Matches.Length == 1);
@@ -32,7 +29,6 @@ namespace CommandLineTools
 
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
-            return;
         }
     }
 }

@@ -33,10 +33,11 @@ namespace DotaApiCore
 
         public MatchHistoryResult GetMatchHistory(long? accountId = null, int? heroId = null, int? gameMode = null,
             int? skill = null, int? minPlayers = null, 
-            long?  startingMatchId = null, int? matchesRequested = 100)
+            long? startingMatchId = null, int? matchesRequested = 100)
         {
             var service = _provider.GetService<MatchHistoryService>();
-            var matchHistory = service.GetMatchHistory(accountId: 32588391, matchesRequested: 1);
+            var matchHistory = service.GetMatchHistory(accountId, heroId, gameMode, skill, 
+                minPlayers, startingMatchId, matchesRequested);
 
             return matchHistory.Result;
         }

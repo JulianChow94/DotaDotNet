@@ -1,9 +1,10 @@
 ﻿using System.Net.Http;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 namespace DotaApiCore.Requests
 {
-    internal interface IHttpHandler
+    public interface IHttpHandler
     {
         string SendRequest(string url);
     }
