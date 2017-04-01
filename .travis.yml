@@ -11,4 +11,4 @@ addons:
     packages:
     - dotnet-dev-1.0.1
 script:
-  - ./build.sh --quiet verify
+  - ./build.sh
