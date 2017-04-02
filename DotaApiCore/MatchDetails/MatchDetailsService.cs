@@ -1,10 +1,12 @@
-﻿using DotaApiCore.MatchDetails.Models;
+﻿using System.Runtime.CompilerServices;
+using DotaApiCore.MatchDetails.Models;
 using DotaApiCore.Requests;
+using DotaApiCore.SharedLib;
 using Newtonsoft.Json;
 
 namespace DotaApiCore.MatchDetails
 {
-    public class MatchDetailsService : IMatchDetailsService
+    internal class MatchDetailsService : IMatchDetailsService
     {
         private readonly string _apiKey;
 

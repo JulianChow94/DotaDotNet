@@ -2,7 +2,7 @@
 
 namespace DotaApiCore.MatchHistory
 {
-    public interface IMatchHistoryService
+    internal interface IMatchHistoryService
     {
         MatchHistoryRequestResult GetMatchHistory(long? accountId = null, int? heroId = null, int? gameMode = null, int? skill = null,
             int? minPlayers = null, long? startingMatchId = null, int? matchesRequested = 100);

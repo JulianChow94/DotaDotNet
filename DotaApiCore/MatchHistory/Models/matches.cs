@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using DotaApiCore.SharedLib;
 
 namespace DotaApiCore.MatchHistory.Models
 {

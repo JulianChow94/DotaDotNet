@@ -3,10 +3,10 @@ using System.Net.Http;
 
 namespace DotaApiCore.Requests
 {
-    public class MatchHistoryRequest : Request
+    internal class MatchHistoryRequest : Request
     {
         /*
-         * NOTE: LeagueID to be implemented as part of the "League sprint"
+         * TODO: LeagueID to be implemented as part of the "League sprint"
          * Omitting for now
          * Same situation for Tourney games only filter
          */
@@ -30,6 +30,8 @@ namespace DotaApiCore.Requests
 
         public int? MatchesRequested { get; set; }
 
+        public string RequestUrl { get; set; }
+
         public MatchHistoryRequest(string apiKey, long? accountId = null, int? heroId = null, int? gameMode = null, int? skill = null,
             int? minPlayers = null, long? startingMatchId = null, int? matchesRequested = 100)
         {
@@ -44,12 +46,13 @@ namespace DotaApiCore.Requests
             MatchHistoryBaseUrl = SharedLib.Strings.DotaApiBaseUrl +
                 SharedLib.Strings.GetMatchHistoryExtension +
                 string.Format("?key={0}", ApiKey);
+
+            RequestUrl = BuildUrlParameters(MatchHistoryBaseUrl);
         }
 
         public override HttpResponseMessage SendRequest()
         {
             var requestUrl = BuildUrlParameters(MatchHistoryBaseUrl);
-            Debug.WriteLine(requestUrl);
 
             var client = new HttpClient();
             var result = client.GetAsync(requestUrl).Result;
