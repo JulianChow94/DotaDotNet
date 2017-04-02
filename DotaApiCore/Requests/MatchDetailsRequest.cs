@@ -4,7 +4,7 @@ using System.Net.Http;
 
 namespace DotaApiCore.Requests
 {
-    class MatchDetailsRequest : Request
+    internal class MatchDetailsRequest : Request
     {
         private string MatchDetailsURL { get; set; }
 

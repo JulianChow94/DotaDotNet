@@ -2,7 +2,7 @@
 
 namespace DotaApiCore.Requests
 {
-    public abstract class Request
+    internal abstract class Request
     {
         public string ApiKey { get; set; }
 

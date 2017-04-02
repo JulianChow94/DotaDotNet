@@ -1,10 +1,8 @@
-﻿using DotaApiCore.MatchDetails;
-using DotaApiCore.MatchHistory;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
+using DotaApiCore;
 
-//Temp test program since there are no unit tests yet
 namespace CommandLineTools
 {
     public class Program
@@ -14,24 +12,23 @@ namespace CommandLineTools
 
         public static void Main(string[] args)
         {
-            Console.WriteLine("API Key: " + ApiKey);
+            //Console.WriteLine("API Key: " + ApiKey);
 
-            var testMatchHistoryService = new MatchHistoryService(ApiKey);
-            var matchHistory = testMatchHistoryService.GetMatchHistory(accountId: 32588391, matchesRequested: 1);
+            var lib = new DotaCore(ApiKey);
+            var matchHistory = lib.GetMatchHistory(accountId: 76561197992854119, matchesRequested: 1);
 
             Debug.Assert(matchHistory != null);
-            Debug.Assert(matchHistory.Result.Matches.Length == 1);
+            Debug.Assert(matchHistory.Matches.Length == 1);
 
-            var testMatchDetailsService = new MatchDetailsService(ApiKey);
-            var matchDetails1 = testMatchDetailsService.GetMatchDetails(3053641442); //Recent tournament match
-            var matchDetails2 = testMatchDetailsService.GetMatchDetails(501672851); //Old wraith night game
+            //var testMatchDetailsService = new MatchDetailsService(ApiKey);
+            //var matchDetails1 = testMatchDetailsService.GetMatchDetails(3053641442); //Recent tournament match
+            //var matchDetails2 = testMatchDetailsService.GetMatchDetails(501672851); //Old wraith night game
 
-            Debug.Assert(matchDetails1 != null);
-            Debug.Assert(matchDetails2 != null);
+            //Debug.Assert(matchDetails1 != null);
+            //Debug.Assert(matchDetails2 != null);
 
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
-            return;
         }
     }
 }
