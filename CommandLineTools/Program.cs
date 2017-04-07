@@ -20,12 +20,13 @@ namespace CommandLineTools
             Debug.Assert(matchHistory != null);
             Debug.Assert(matchHistory.Matches.Length == 1);
 
-            //var testMatchDetailsService = new MatchDetailsService(ApiKey);
-            //var matchDetails1 = testMatchDetailsService.GetMatchDetails(3053641442); //Recent tournament match
-            //var matchDetails2 = testMatchDetailsService.GetMatchDetails(501672851); //Old wraith night game
+            var matchDetails1 = lib.GetMatchDetails(3053641442); //Recent tournament match
+            var matchDetails2 = lib.GetMatchDetails(501672851); //Old wraith night game
 
-            //Debug.Assert(matchDetails1 != null);
-            //Debug.Assert(matchDetails2 != null);
+            Debug.Assert(matchDetails1 != null);
+            Debug.Assert(matchDetails1.RadiantWin == true);
+            Debug.Assert(matchDetails2 != null);
+            Debug.Assert(matchDetails2.RadiantWin == false);
 
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
