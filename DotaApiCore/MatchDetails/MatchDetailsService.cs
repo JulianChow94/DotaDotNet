@@ -9,10 +9,12 @@ namespace DotaApiCore.MatchDetails
     internal class MatchDetailsService : IMatchDetailsService
     {
         private readonly string _apiKey;
+        private readonly IHttpHandler _handler;
 
-        public MatchDetailsService(string apiKey)
+        public MatchDetailsService(IHttpHandler handler, string apiKey)
         {
             _apiKey = apiKey;
+            _handler = handler;
         }
 
         public MatchDetailsRequestResult GetMatchDetails(long? matchId = null)

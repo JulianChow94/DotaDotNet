@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
+using DotaApiCore.MatchDetails;
+using DotaApiCore.MatchDetails.Models;
 using DotaApiCore.MatchHistory;
 using DotaApiCore.MatchHistory.Models;
 using DotaApiCore.Requests;
@@ -27,6 +29,8 @@ namespace DotaApiCore
             ServiceContainers.Services.AddTransient<IHttpHandler, HttpClientHandler>();
             ServiceContainers.Services.AddTransient<MatchHistoryService>(
                 provider => new MatchHistoryService(provider.GetService<IHttpHandler>(), _apiKey));
+            ServiceContainers.Services.AddTransient<MatchDetailsService>(
+                provider => new MatchDetailsService(provider.GetService<IHttpHandler>(), _apiKey));
 
             _provider = ServiceContainers.Services.BuildServiceProvider();
         }
@@ -35,11 +39,19 @@ namespace DotaApiCore
             int? skill = null, int? minPlayers = null, 
             long? startingMatchId = null, int? matchesRequested = 100)
         {
-            var service = _provider.GetService<MatchHistoryService>();
-            var matchHistory = service.GetMatchHistory(accountId, heroId, gameMode, skill, 
+            IMatchHistoryService service = _provider.GetService<MatchHistoryService>();
+            MatchHistoryRequestResult matchHistory = service.GetMatchHistory(accountId, heroId, gameMode, skill, 
                 minPlayers, startingMatchId, matchesRequested);
 
             return matchHistory.Result;
+        }
+
+        public MatchDetailsResult GetMatchDetails(long? matchID = null)
+        {
+            IMatchDetailsService service = _provider.GetService<MatchDetailsService>();
+            MatchDetailsRequestResult details = service.GetMatchDetails(matchID);
+
+            return details.Result;
         }
     }
 }
