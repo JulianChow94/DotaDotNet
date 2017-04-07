@@ -22,6 +22,7 @@ namespace DotaApiCore.Requests
                 string.Format("&match_id={0}", matchId);
         }
 
+        //TODO: Delete
         public override HttpResponseMessage SendRequest()
         {
             Debug.WriteLine(MatchDetailsURL);

@@ -12,9 +12,9 @@ using Moq;
 
 namespace DotaApiUnitTests
 {
-
+    //TODO: More extensive tests
     [TestClass()]
-    public class MatchHistoryServiceTests
+    public class TestMatchHistoryService
     {
         private const string MockApiKey = "MockApiKey";
         private const int MockAccountId = 322;
