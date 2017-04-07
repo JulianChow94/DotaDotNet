@@ -20,9 +20,9 @@ namespace DotaApiCore.MatchDetails
         public MatchDetailsRequestResult GetMatchDetails(long? matchId = null)
         {
             var request = new MatchDetailsRequest(_apiKey, matchId);
-            var response = SharedFunctions.SendAndValidateRequest(request);
+            var response = _handler.SendRequest(request.MatchDetailsURL);
 
-            return JsonConvert.DeserializeObject<MatchDetailsRequestResult>(response.Result);
+            return JsonConvert.DeserializeObject<MatchDetailsRequestResult>(response);
         }
 
     }

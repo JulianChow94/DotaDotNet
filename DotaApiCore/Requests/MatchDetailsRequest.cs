@@ -6,7 +6,7 @@ namespace DotaApiCore.Requests
 {
     internal class MatchDetailsRequest : Request
     {
-        private string MatchDetailsURL { get; set; }
+        public string MatchDetailsURL { get; set; }
 
         public MatchDetailsRequest(string apiKey, long? matchId = null)
         {
