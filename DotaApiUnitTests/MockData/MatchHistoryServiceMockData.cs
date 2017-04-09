@@ -4,6 +4,7 @@ using System.Text;
 
 namespace DotaApiUnitTests.MockData
 {
+    //TODO: Have mock data stored as JSONs instead of hardcoding them in C# files?
     public static class MatchHistoryServiceMockData
     {
         public static string GenericSuccess =

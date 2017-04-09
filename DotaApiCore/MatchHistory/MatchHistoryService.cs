@@ -26,25 +26,11 @@ namespace DotaApiCore.MatchHistory
             var matchHistoryRequest = new MatchHistoryRequest(_apiKey, accountId, heroId, gameMode,
                 skill, minPlayers, startingMatchId, matchesRequested);
 
-            var responseBody = SendAndValidateRequest(matchHistoryRequest);
+            var responseBody = _client.SendRequest(matchHistoryRequest.RequestUrl);
 
             var results = JsonConvert.DeserializeObject<MatchHistoryRequestResult>(responseBody);
 
             return results;
-        }
-
-        private string SendAndValidateRequest(MatchHistoryRequest matchHistoryRequest)
-        {
-            var result = SendRequest(matchHistoryRequest.RequestUrl);
-
-            return result;
-        }
-
-        public string SendRequest(string requestUrl)
-        {
-            var result = _client.SendRequest(requestUrl);
-
-            return result;
         }
     }
 }

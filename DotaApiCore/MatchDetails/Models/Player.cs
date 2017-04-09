@@ -73,7 +73,7 @@ namespace DotaApiCore.MatchDetails.Models
         public int Gold { get; set; }
 
         [JsonProperty("gold_spent")]
-        public int gold_spent { get; set; }
+        public int GoldSpent { get; set; }
 
         [JsonProperty("scaled_hero_damage")]
         public int ScaledHeroDamage { get; set; }

@@ -6,7 +6,7 @@ namespace DotaApiCore.Requests
 {
     internal class MatchDetailsRequest : Request
     {
-        private string MatchDetailsURL { get; set; }
+        public string MatchDetailsURL { get; set; }
 
         public MatchDetailsRequest(string apiKey, long? matchId = null)
         {
@@ -22,6 +22,7 @@ namespace DotaApiCore.Requests
                 string.Format("&match_id={0}", matchId);
         }
 
+        //TODO: Delete
         public override HttpResponseMessage SendRequest()
         {
             Debug.WriteLine(MatchDetailsURL);

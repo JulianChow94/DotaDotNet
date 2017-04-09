@@ -50,6 +50,7 @@ namespace DotaApiCore.Requests
             RequestUrl = BuildUrlParameters(MatchHistoryBaseUrl);
         }
 
+        //TODO: Delete
         public override HttpResponseMessage SendRequest()
         {
             var requestUrl = BuildUrlParameters(MatchHistoryBaseUrl);
