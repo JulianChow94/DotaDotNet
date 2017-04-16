@@ -4,7 +4,7 @@ namespace DotaApiCore.MatchHistory.Models
 {
     internal class UrlConfiguration
     {
-        [JsonProperty("DotaApiBaseUrl")]
+        [JsonProperty("DotaMatchBaseUrl")]
         public string BaseUrl { get; set; }
 
         public string GetMatchHistoryExtension { get; set; }

@@ -4,6 +4,6 @@ namespace DotaApiCore.HeroDetails
 {
     internal interface IHeroDetailsService
     {
-        HeroDetailsRequestResult GetHeroDetails(string language = "en");
+        HeroDetailsRequestResult GetHeroDetails(string language);
     }
 }

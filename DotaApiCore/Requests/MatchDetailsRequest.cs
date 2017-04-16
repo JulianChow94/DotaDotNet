@@ -16,7 +16,7 @@ namespace DotaApiCore.Requests
             }
 
             ApiKey = apiKey;
-            MatchDetailsURL = SharedLib.Strings.DotaApiBaseUrl +
+            MatchDetailsURL = SharedLib.Strings.DotaMatchBaseUrl +
                 SharedLib.Strings.GetMatchDetailsExtension +
                 string.Format("?key={0}", ApiKey) +
                 string.Format("&match_id={0}", matchId);
