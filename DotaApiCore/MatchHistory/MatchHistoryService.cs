@@ -1,8 +1,5 @@
-﻿using System.Net.Http;
-using System.Threading.Tasks;
-using DotaApiCore.MatchHistory.Models;
+﻿using DotaApiCore.MatchHistory.Models;
 using DotaApiCore.Requests;
-using DotaApiCore.SharedLib;
 using Newtonsoft.Json;
 
 namespace DotaApiCore.MatchHistory
