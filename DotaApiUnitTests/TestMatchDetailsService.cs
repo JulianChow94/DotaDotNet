@@ -35,11 +35,12 @@ namespace DotaApiUnitTests
         [TestMethod]
         public void GetMatchDetails_Pass()
         {
-            mockHandler.Setup(s => s.SendRequest(It.IsAny<string>())).Returns(MatchDetailsServiceMockData.Success1);
+            mockHandler.Setup(s => s.SendRequest(It.IsAny<string>())).Returns(MatchDetailsServiceMockData.Test1);
             IMatchDetailsService service = new MatchDetailsService(mockHandler.Object, MockApiKey);
-            MatchDetailsRequestResult result = service.GetMatchDetails(MockMatchId);
+            MatchDetailsResult result = service.GetMatchDetails(MockMatchId).Result;
 
-
+            Assert.AreEqual(result.MatchDuration, 1914);
+            Assert.IsFalse(result.RadiantWin);
         }
 
         [TestMethod]
