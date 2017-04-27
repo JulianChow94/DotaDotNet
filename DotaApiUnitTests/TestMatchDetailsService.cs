@@ -1,12 +1,6 @@
-﻿using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
-using System.Reflection;
-using DotaApiCore.MatchDetails.Models;
+﻿using DotaApiCore.MatchDetails.Models;
 using DotaApiCore.MatchDetails;
 using DotaApiCore.Requests;
-using DotaApiCore.SharedLib;
 using DotaApiUnitTests.MockData;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -14,7 +8,7 @@ using Moq;
 
 namespace DotaApiUnitTests
 {
-    //TODO: Write testcases for TestMatchDetailsService
+    //TODO: Finish testcases and testing criteria for this file
     [TestCategory("Test MatchDetailsService")]
     [TestClass()]
     public class TestMatchDetailsService
@@ -33,9 +27,9 @@ namespace DotaApiUnitTests
         public void Destroy(){}
 
         [TestMethod]
-        public void GetMatchDetails_Pass()
+        public void GetMatchDetails_OldMatch()
         {
-            mockHandler.Setup(s => s.SendRequest(It.IsAny<string>())).Returns(MatchDetailsServiceMockData.Test1);
+            mockHandler.Setup(s => s.SendRequest(It.IsAny<string>())).Returns(MatchDetailsServiceMockData.OldMatch);
             IMatchDetailsService service = new MatchDetailsService(mockHandler.Object, MockApiKey);
             MatchDetailsResult result = service.GetMatchDetails(MockMatchId).Result;
 
@@ -44,13 +38,25 @@ namespace DotaApiUnitTests
         }
 
         [TestMethod]
-        public void GetMatchDetails_Fail()
+        public void GetMatchDetails_NewMatch()
         {
-            mockHandler.Setup(s => s.SendRequest(It.IsAny<string>())).Returns(MatchDetailsServiceMockData.Failure1);
+            mockHandler.Setup(s => s.SendRequest(It.IsAny<string>())).Returns(MatchDetailsServiceMockData.NewMatch);
             IMatchDetailsService service = new MatchDetailsService(mockHandler.Object, MockApiKey);
-            MatchDetailsRequestResult result = service.GetMatchDetails(MockMatchId);
+            MatchDetailsResult result = service.GetMatchDetails(MockMatchId).Result;
 
+            Assert.AreEqual(result.MatchDuration, 2151);
+            Assert.IsFalse(result.RadiantWin);
+        }
 
+        [TestMethod]
+        public void GetMatchDetails_FailedFetch()
+        {
+            mockHandler.Setup(s => s.SendRequest(It.IsAny<string>())).Returns(MatchDetailsServiceMockData.FailedFetch);
+            IMatchDetailsService service = new MatchDetailsService(mockHandler.Object, MockApiKey);
+            MatchDetailsResult result = service.GetMatchDetails(MockMatchId).Result;
+
+            Assert.IsNull(result.MatchDuration);
+            Assert.IsNull(result.RadiantWin);
         }
     }
 }
