@@ -35,6 +35,7 @@ namespace DotaApiUnitTests
 
             Assert.AreEqual(result.MatchDuration, 1914);
             Assert.IsFalse(result.RadiantWin);
+            Assert.IsNull(result.ErrorMessage);
         }
 
         [TestMethod]
@@ -46,17 +47,18 @@ namespace DotaApiUnitTests
 
             Assert.AreEqual(result.MatchDuration, 2151);
             Assert.IsFalse(result.RadiantWin);
+            Assert.IsNull(result.ErrorMessage);
         }
 
         [TestMethod]
         public void GetMatchDetails_FailedFetch()
         {
-            mockHandler.Setup(s => s.SendRequest(It.IsAny<string>())).Returns(MatchDetailsServiceMockData.FailedFetch);
+            mockHandler.Setup(s => s.SendRequest(It.IsAny<string>())).Returns(MatchDetailsServiceMockData.FailedMatch);
             IMatchDetailsService service = new MatchDetailsService(mockHandler.Object, MockApiKey);
             MatchDetailsResult result = service.GetMatchDetails(MockMatchId).Result;
 
-            Assert.IsNull(result.MatchDuration);
-            Assert.IsNull(result.RadiantWin);
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.ErrorMessage);
         }
     }
 }

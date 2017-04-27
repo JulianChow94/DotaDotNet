@@ -9,6 +9,6 @@ namespace DotaApiUnitTests.MockData
 
         public static string OldMatch = new StreamReader(assem.GetManifestResourceStream("DotaApiUnitTests.MockData.oldmatch.json")).ReadToEnd();
         public static string NewMatch = new StreamReader(assem.GetManifestResourceStream("DotaApiUnitTests.MockData.newmatch.json")).ReadToEnd();
-        public static string FailedFetch = "{\"result\":{}}";
+        public static string FailedMatch = new StreamReader(assem.GetManifestResourceStream("DotaApiUnitTests.MockData.failedmatch.json")).ReadToEnd();
     }
 }

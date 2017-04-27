@@ -5,10 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="MockData\failedmatch.json" />
     <None Remove="MockData\newmatch.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="MockData\failedmatch.json" />
     <EmbeddedResource Include="MockData\newmatch.json" />
     <EmbeddedResource Include="MockData\oldmatch.json" />
   </ItemGroup>
