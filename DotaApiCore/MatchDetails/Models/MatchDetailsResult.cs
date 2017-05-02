@@ -79,5 +79,8 @@ namespace DotaApiCore.MatchDetails.Models
 
         [JsonProperty("dire_score")]
         public int DireScore { get; set; }
+
+        [JsonProperty("error")]
+        public string ErrorMessage { get; set; }
     }
 }

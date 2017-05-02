@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="MockData\failedmatch.json" />
+    <None Remove="MockData\newmatch.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="MockData\failedmatch.json" />
+    <EmbeddedResource Include="MockData\newmatch.json" />
+    <EmbeddedResource Include="MockData\oldmatch.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
     <PackageReference Include="Moq" Version="4.7.8" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.1.14" />
