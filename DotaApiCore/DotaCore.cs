@@ -58,7 +58,7 @@ namespace DotaApiCore
             return details.Result;
         }
 
-        public HeroDetailsResult GetHeroDetails(string language = null)
+        public HeroDetailsResult GetAllHeroDetails(string language = null)
         {
             IHeroDetailsService service = _provider.GetService<HeroDetailsService>();
             HeroDetailsRequestResult heroDetails = service.GetHeroDetails(language);

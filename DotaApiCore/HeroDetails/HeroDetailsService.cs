@@ -1,5 +1,4 @@
-﻿using System;
-using DotaApiCore.HeroDetails.Models;
+﻿using DotaApiCore.HeroDetails.Models;
 using DotaApiCore.Requests;
 using Newtonsoft.Json;
 
@@ -16,7 +15,7 @@ namespace DotaApiCore.HeroDetails
             _apiKey = apiKey;
         }
 
-        public HeroDetailsRequestResult GetHeroDetails(string language)
+        public HeroDetailsRequestResult GetHeroDetails(string language = null)
         {
             var heroDetailsRequest = new HeroDetailsRequest(_apiKey, language);
             var responseBody = _client.SendRequest(heroDetailsRequest.RequestUrl);

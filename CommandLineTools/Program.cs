@@ -27,7 +27,7 @@ namespace CommandLineTools
             Debug.Assert(matchDetails2 != null);
             Debug.Assert(matchDetails2.RadiantWin == false);
 
-            var heroDetails = lib.GetHeroDetails();
+            var heroDetails = lib.GetAllHeroDetails();
             Debug.Assert(heroDetails.Status == (int) HttpStatusCode.OK);
 
 

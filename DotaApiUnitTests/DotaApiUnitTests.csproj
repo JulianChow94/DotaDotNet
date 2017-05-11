@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="MockData\HeroDetailsService\HeroDetailsResponse.json" />
     <EmbeddedResource Include="MockData\MatchDetailsService\failedmatch.json" />
     <EmbeddedResource Include="MockData\MatchDetailsService\newmatch.json" />
     <EmbeddedResource Include="MockData\MatchHistoryService\FailedMatchHistory.json" />
