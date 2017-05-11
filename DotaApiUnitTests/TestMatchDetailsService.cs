@@ -2,13 +2,13 @@
 using DotaApiCore.MatchDetails;
 using DotaApiCore.Requests;
 using DotaApiUnitTests.MockData;
+using DotaApiUnitTests.MockData.MatchHistoryService;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
 
 namespace DotaApiUnitTests
 {
-    //TODO: Finish testcases and testing criteria for this file
     [TestCategory("Test MatchDetailsService")]
     [TestClass()]
     public class TestMatchDetailsService

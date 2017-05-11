@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Net;
 using DotaApiCore;
 
 namespace CommandLineTools
@@ -18,8 +19,8 @@ namespace CommandLineTools
             Debug.Assert(matchHistory != null);
             Debug.Assert(matchHistory.Matches.Length == 1);
 
-            var matchDetails1 = lib.GetMatchDetails(3053641442); //Recent tournament match
-            var matchDetails2 = lib.GetMatchDetails(501672851); //Old wraith night game
+            var matchDetails1 = lib.GetMatchDetails(3053641442); // Recent tournament match
+            var matchDetails2 = lib.GetMatchDetails(501672851);  // Old wraith night game
 
             Debug.Assert(matchDetails1 != null);
             Debug.Assert(matchDetails1.RadiantWin == true);
@@ -27,6 +28,8 @@ namespace CommandLineTools
             Debug.Assert(matchDetails2.RadiantWin == false);
 
             var heroDetails = lib.GetHeroDetails();
+            Debug.Assert(heroDetails.Status == (int) HttpStatusCode.OK);
+
 
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
