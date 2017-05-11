@@ -3,5 +3,5 @@ set -e
 
 dotnet restore && dotnet build
 cd DotaApiUnitTests
-echo "***RUN DOTNET TEST***"
+echo "***RUNNING UNIT TESTS***"
 dotnet test 

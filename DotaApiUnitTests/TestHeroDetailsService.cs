@@ -32,10 +32,7 @@ namespace DotaApiUnitTests
             Assert.AreEqual(response.Result.Status, (int) HttpStatusCode.OK);
             Assert.IsNotNull(response.Result.Heroes);
             Assert.AreEqual(response.Result.Heroes.Length, 113);
-            Assert.AreEqual(response.Result.TotalHeroes, 113);
-
-
-;           
+            Assert.AreEqual(response.Result.TotalHeroes, 113);           
             Assert.IsTrue(true);
         }
     }
