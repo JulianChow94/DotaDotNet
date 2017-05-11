@@ -13,7 +13,7 @@ namespace CommandLineTools
         public static void Main(string[] args)
         {
             var lib = new DotaCore(ApiKey);
-            var matchHistory = lib.GetMatchHistory(accountId: 76561197992854119, matchesRequested: 1);
+            var matchHistory = lib.GetMatchHistory(accountId: 70388657, matchesRequested: 1);
 
             Debug.Assert(matchHistory != null);
             Debug.Assert(matchHistory.Matches.Length == 1);
@@ -25,6 +25,8 @@ namespace CommandLineTools
             Debug.Assert(matchDetails1.RadiantWin == true);
             Debug.Assert(matchDetails2 != null);
             Debug.Assert(matchDetails2.RadiantWin == false);
+
+            var heroDetails = lib.GetHeroDetails();
 
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
