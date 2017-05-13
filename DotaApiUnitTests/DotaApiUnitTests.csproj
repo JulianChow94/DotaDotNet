@@ -10,9 +10,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="MockData\failedmatch.json" />
-    <EmbeddedResource Include="MockData\newmatch.json" />
-    <EmbeddedResource Include="MockData\oldmatch.json" />
+    <EmbeddedResource Include="MockData\HeroDetailsService\HeroDetailsResponse.json" />
+    <EmbeddedResource Include="MockData\MatchDetailsService\failedmatch.json" />
+    <EmbeddedResource Include="MockData\MatchDetailsService\newmatch.json" />
+    <EmbeddedResource Include="MockData\MatchHistoryService\FailedMatchHistory.json" />
+    <EmbeddedResource Include="MockData\MatchHistoryService\SucessfullMatchHistory.json" />
+    <EmbeddedResource Include="MockData\MatchDetailsService\oldmatch.json" />
   </ItemGroup>
 
   <ItemGroup>

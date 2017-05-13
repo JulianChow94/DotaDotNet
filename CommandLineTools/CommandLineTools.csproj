@@ -9,8 +9,4 @@
     <ProjectReference Include="..\DotaApiCore\DotaApiCore.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Configuration\" />
-  </ItemGroup>
-
 </Project>
