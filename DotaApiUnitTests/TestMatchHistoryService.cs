@@ -8,7 +8,6 @@ using Moq;
 
 namespace DotaApiUnitTests
 {
-    //TODO: More extensive tests
     [TestCategory("Test MatchHistoryService")]
     [TestClass()]
     public class TestMatchHistoryService

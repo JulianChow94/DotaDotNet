@@ -49,15 +49,6 @@ namespace DotaApiCore.Requests
             RequestUrl = BuildUrlParameters(MatchHistoryBaseUrl);
         }
 
-        //TODO: Delete
-        public override HttpResponseMessage SendRequest()
-        {
-            var client = new HttpClient();
-            var result = client.GetAsync(RequestUrl).Result;
-
-            return result;
-        }
-
         private string BuildUrlParameters(string requestUrl)
         {
             if (AccountId != null)

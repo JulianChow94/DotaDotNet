@@ -20,14 +20,6 @@ namespace DotaApiCore.Requests
             RequestUrl = BuildUrlParameters(HeroDetailsBaseUrl);
         }
 
-        public override HttpResponseMessage SendRequest()
-        {
-            var client = new HttpClient();
-            var result = client.GetAsync(RequestUrl).Result;
-
-            return result;
-        }
-
         private string BuildUrlParameters(string requestUrl)
         {
             if (!string.IsNullOrEmpty(Language))
