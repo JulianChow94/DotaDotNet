@@ -1,7 +1,4 @@
-﻿using System.Diagnostics;
-using System.Net.Http;
-
-namespace DotaApiCore.Requests
+﻿namespace DotaApiCore.Requests
 {
     internal class MatchHistoryRequest : Request
     {

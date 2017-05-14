@@ -22,6 +22,5 @@ namespace DotaApiCore.MatchDetails
 
             return JsonConvert.DeserializeObject<MatchDetailsRequestResult>(response);
         }
-
     }
 }

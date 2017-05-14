@@ -11,6 +11,5 @@ namespace DotaApiUnitTests.MockData.HeroDetailsService
             new StreamReader(
                 asm.GetManifestResourceStream(
                     "DotaApiUnitTests.MockData.HeroDetailsService.HeroDetailsResponse.json")).ReadToEnd();
-
     }
 }

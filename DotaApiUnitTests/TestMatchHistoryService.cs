@@ -1,10 +1,10 @@
-using System.Linq;
 using DotaApiCore.MatchHistory;
 using DotaApiCore.Requests;
 using DotaApiCore.SharedLib;
 using DotaApiUnitTests.MockData.MatchHistoryService;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using System.Linq;
 
 namespace DotaApiUnitTests
 {
@@ -19,7 +19,7 @@ namespace DotaApiUnitTests
         [TestInitialize]
         public void Init()
         {
-           _httpClientMock = new Mock<IHttpHandler>();
+            _httpClientMock = new Mock<IHttpHandler>();
         }
 
         [TestMethod]

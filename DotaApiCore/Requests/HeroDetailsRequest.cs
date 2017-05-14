@@ -1,6 +1,4 @@
-﻿using System.Net.Http;
-
-namespace DotaApiCore.Requests
+﻿namespace DotaApiCore.Requests
 {
     internal class HeroDetailsRequest : Request
     {

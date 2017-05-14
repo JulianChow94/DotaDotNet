@@ -1,10 +1,9 @@
-﻿using DotaApiCore.MatchDetails.Models;
-using DotaApiCore.MatchDetails;
+﻿using DotaApiCore.MatchDetails;
+using DotaApiCore.MatchDetails.Models;
 using DotaApiCore.Requests;
 using DotaApiUnitTests.MockData;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-
 
 namespace DotaApiUnitTests
 {
@@ -23,7 +22,7 @@ namespace DotaApiUnitTests
         }
 
         [TestCleanup]
-        public void Destroy(){}
+        public void Destroy() { }
 
         [TestMethod]
         public void GetMatchDetails_OldMatch()
