@@ -21,6 +21,5 @@ namespace DotaApiCore.MatchHistory.Models
 
         [JsonProperty("matches")]
         public Matches[] Matches { get; set; }
-
     }
 }

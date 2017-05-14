@@ -1,6 +1,4 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-using DotaApiCore.HeroDetails;
+﻿using DotaApiCore.HeroDetails;
 using DotaApiCore.HeroDetails.Models;
 using DotaApiCore.MatchDetails;
 using DotaApiCore.MatchDetails.Models;
@@ -9,6 +7,8 @@ using DotaApiCore.MatchHistory.Models;
 using DotaApiCore.Requests;
 using DotaApiCore.SharedLib.ServiceContainer;
 using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("DotaApiUnitTests")]
 
@@ -40,11 +40,11 @@ namespace DotaApiCore
         }
 
         public MatchHistoryResult GetMatchHistory(long? accountId = null, int? heroId = null, int? gameMode = null,
-            int? skill = null, int? minPlayers = null, 
+            int? skill = null, int? minPlayers = null,
             long? startingMatchId = null, int? matchesRequested = 100)
         {
             IMatchHistoryService service = _provider.GetService<MatchHistoryService>();
-            MatchHistoryRequestResult matchHistory = service.GetMatchHistory(accountId, heroId, gameMode, skill, 
+            MatchHistoryRequestResult matchHistory = service.GetMatchHistory(accountId, heroId, gameMode, skill,
                 minPlayers, startingMatchId, matchesRequested);
 
             return matchHistory.Result;

@@ -1,7 +1,4 @@
-﻿using System.Diagnostics;
-using System.Net.Http;
-
-namespace DotaApiCore.Requests
+﻿namespace DotaApiCore.Requests
 {
     internal class MatchHistoryRequest : Request
     {
@@ -47,15 +44,6 @@ namespace DotaApiCore.Requests
                 string.Format("?key={0}", ApiKey);
 
             RequestUrl = BuildUrlParameters(MatchHistoryBaseUrl);
-        }
-
-        //TODO: Delete
-        public override HttpResponseMessage SendRequest()
-        {
-            var client = new HttpClient();
-            var result = client.GetAsync(RequestUrl).Result;
-
-            return result;
         }
 
         private string BuildUrlParameters(string requestUrl)

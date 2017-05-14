@@ -1,5 +1,5 @@
-﻿using System.Reflection;
-using System.IO;
+﻿using System.IO;
+using System.Reflection;
 
 namespace DotaApiUnitTests.MockData
 {

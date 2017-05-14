@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
-using DotaApiCore.Requests;
 
 namespace DotaApiCore.SharedLib
 {
@@ -9,17 +7,6 @@ namespace DotaApiCore.SharedLib
         public static DateTime UnixTimeStampToDateTime(int epoch)
         {
             return new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(epoch);
-        }
-
-        //TODO: Delete this since its no longer necessary or integrate with HttpClientHandler?
-        public static async Task<string> SendAndValidateRequest(Request request)
-        {
-            var result = request.SendRequest();
-            result.EnsureSuccessStatusCode();
-
-            var response = await result.Content.ReadAsStringAsync();
-
-            return response;
         }
     }
 }

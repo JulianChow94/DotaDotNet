@@ -1,8 +1,8 @@
-﻿using System;
+﻿using DotaApiCore;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
-using DotaApiCore;
 
 namespace CommandLineTools
 {
@@ -28,8 +28,7 @@ namespace CommandLineTools
             Debug.Assert(matchDetails2.RadiantWin == false);
 
             var heroDetails = lib.GetAllHeroDetails();
-            Debug.Assert(heroDetails.Status == (int) HttpStatusCode.OK);
-
+            Debug.Assert(heroDetails.Status == (int)HttpStatusCode.OK);
 
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();

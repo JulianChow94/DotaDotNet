@@ -1,6 +1,4 @@
-﻿using System.Net.Http;
-
-namespace DotaApiCore.Requests
+﻿namespace DotaApiCore.Requests
 {
     internal class HeroDetailsRequest : Request
     {
@@ -18,14 +16,6 @@ namespace DotaApiCore.Requests
                                  SharedLib.Strings.GetHeroesExtension + string.Format("?key={0}", ApiKey);
 
             RequestUrl = BuildUrlParameters(HeroDetailsBaseUrl);
-        }
-
-        public override HttpResponseMessage SendRequest()
-        {
-            var client = new HttpClient();
-            var result = client.GetAsync(RequestUrl).Result;
-
-            return result;
         }
 
         private string BuildUrlParameters(string requestUrl)
