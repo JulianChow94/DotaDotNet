@@ -8,19 +8,18 @@ using Moq;
 
 namespace DotaApiUnitTests
 {
-    //TODO: Finish testcases and testing criteria for this file
     [TestCategory("Test MatchDetailsService")]
     [TestClass()]
     public class TestMatchDetailsService
     {
         private const string MockApiKey = "12345";
         private const int MockMatchId = 3154;
-        private Mock<IHttpHandler> mockHandler;
+        private Mock<IHttpHandler> _httpClientMock;
 
         [TestInitialize]
         public void Init()
         {
-            mockHandler = new Mock<IHttpHandler>();
+            _httpClientMock = new Mock<IHttpHandler>();
         }
 
         [TestCleanup]
@@ -29,8 +28,8 @@ namespace DotaApiUnitTests
         [TestMethod]
         public void GetMatchDetails_OldMatch()
         {
-            mockHandler.Setup(s => s.SendRequest(It.IsAny<string>())).Returns(MatchDetailsServiceMockData.OldMatch);
-            IMatchDetailsService service = new MatchDetailsService(mockHandler.Object, MockApiKey);
+            _httpClientMock.Setup(s => s.SendRequest(It.IsAny<string>())).Returns(MatchDetailsServiceMockData.OldMatch);
+            IMatchDetailsService service = new MatchDetailsService(_httpClientMock.Object, MockApiKey);
             MatchDetailsResult result = service.GetMatchDetails(MockMatchId).Result;
 
             Assert.AreEqual(result.MatchDuration, 1914);
@@ -41,8 +40,8 @@ namespace DotaApiUnitTests
         [TestMethod]
         public void GetMatchDetails_NewMatch()
         {
-            mockHandler.Setup(s => s.SendRequest(It.IsAny<string>())).Returns(MatchDetailsServiceMockData.NewMatch);
-            IMatchDetailsService service = new MatchDetailsService(mockHandler.Object, MockApiKey);
+            _httpClientMock.Setup(s => s.SendRequest(It.IsAny<string>())).Returns(MatchDetailsServiceMockData.NewMatch);
+            IMatchDetailsService service = new MatchDetailsService(_httpClientMock.Object, MockApiKey);
             MatchDetailsResult result = service.GetMatchDetails(MockMatchId).Result;
 
             Assert.AreEqual(result.MatchDuration, 2151);
@@ -53,8 +52,8 @@ namespace DotaApiUnitTests
         [TestMethod]
         public void GetMatchDetails_FailedFetch()
         {
-            mockHandler.Setup(s => s.SendRequest(It.IsAny<string>())).Returns(MatchDetailsServiceMockData.FailedMatch);
-            IMatchDetailsService service = new MatchDetailsService(mockHandler.Object, MockApiKey);
+            _httpClientMock.Setup(s => s.SendRequest(It.IsAny<string>())).Returns(MatchDetailsServiceMockData.FailedMatch);
+            IMatchDetailsService service = new MatchDetailsService(_httpClientMock.Object, MockApiKey);
             MatchDetailsResult result = service.GetMatchDetails(MockMatchId).Result;
 
             Assert.IsNotNull(result);

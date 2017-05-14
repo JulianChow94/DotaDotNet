@@ -11,11 +11,10 @@ namespace DotaApiCore.Requests
          * Same situation for Tourney games only filter
          */
 
-        private string MatchHistoryBaseUrl { get; set; }
+        private string MatchHistoryBaseUrl { get; }
 
         public long? AccountId { get; set; }
 
-        //TODO: Enumerize
         public int? HeroId { get; set; }
 
         //TODO: Enumerize
@@ -43,7 +42,7 @@ namespace DotaApiCore.Requests
             MinimumPlayers = minPlayers;
             StartAtMatchId = startingMatchId;
             MatchesRequested = matchesRequested;
-            MatchHistoryBaseUrl = SharedLib.Strings.DotaApiBaseUrl +
+            MatchHistoryBaseUrl = SharedLib.Strings.DotaMatchBaseUrl +
                 SharedLib.Strings.GetMatchHistoryExtension +
                 string.Format("?key={0}", ApiKey);
 
@@ -53,10 +52,8 @@ namespace DotaApiCore.Requests
         //TODO: Delete
         public override HttpResponseMessage SendRequest()
         {
-            var requestUrl = BuildUrlParameters(MatchHistoryBaseUrl);
-
             var client = new HttpClient();
-            var result = client.GetAsync(requestUrl).Result;
+            var result = client.GetAsync(RequestUrl).Result;
 
             return result;
         }

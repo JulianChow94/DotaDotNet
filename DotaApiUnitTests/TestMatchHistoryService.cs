@@ -1,18 +1,15 @@
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Net.Http;
-using System.Reflection;
 using DotaApiCore.MatchHistory;
 using DotaApiCore.Requests;
 using DotaApiCore.SharedLib;
-using DotaApiUnitTests.MockData;
+using DotaApiUnitTests.MockData.MatchHistoryService;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
 namespace DotaApiUnitTests
 {
     //TODO: More extensive tests
+    [TestCategory("Test MatchHistoryService")]
     [TestClass()]
     public class TestMatchHistoryService
     {

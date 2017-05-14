@@ -1,0 +1,6 @@
+﻿{
+  "result": {
+    "status": 15,
+    "statusDetail": "Cannot get match history for a user that hasn't allowed it"
+  }
+}
