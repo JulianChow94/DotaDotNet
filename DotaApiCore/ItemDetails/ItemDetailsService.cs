@@ -19,6 +19,7 @@ namespace DotaApiCore.ItemDetails
         {
             var request = new ItemDetailsRequest(_apikey_, language);
             var response = _httpclient_.SendRequest(request.ItemDetailsURL);
+
             return JsonConvert.DeserializeObject<ItemDetailsRequestResult>(response);
         }
     }

@@ -6,11 +6,13 @@
 
   <ItemGroup>
     <None Remove="MockData\failedmatch.json" />
+    <None Remove="MockData\ItemDetailsService\itemdetails.json" />
     <None Remove="MockData\newmatch.json" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="MockData\HeroDetailsService\HeroDetailsResponse.json" />
+    <EmbeddedResource Include="MockData\ItemDetailsService\itemdetails.json" />
     <EmbeddedResource Include="MockData\MatchDetailsService\failedmatch.json" />
     <EmbeddedResource Include="MockData\MatchDetailsService\newmatch.json" />
     <EmbeddedResource Include="MockData\MatchHistoryService\FailedMatchHistory.json" />
