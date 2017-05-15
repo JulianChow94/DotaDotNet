@@ -1,5 +1,7 @@
 ﻿using DotaApiCore.HeroDetails;
 using DotaApiCore.HeroDetails.Models;
+using DotaApiCore.ItemDetails;
+using DotaApiCore.ItemDetails.Models;
 using DotaApiCore.MatchDetails;
 using DotaApiCore.MatchDetails.Models;
 using DotaApiCore.MatchHistory;
@@ -35,6 +37,8 @@ namespace DotaApiCore
                 provider => new MatchDetailsService(provider.GetService<IHttpHandler>(), _apiKey));
             ServiceContainers.Services.AddTransient<HeroDetailsService>(
                 provider => new HeroDetailsService(provider.GetService<IHttpHandler>(), _apiKey));
+            ServiceContainers.Services.AddTransient<ItemDetailsService>(
+                provider => new ItemDetailsService(provider.GetService<IHttpHandler>(), _apiKey));
 
             _provider = ServiceContainers.Services.BuildServiceProvider();
         }
@@ -64,6 +68,13 @@ namespace DotaApiCore
             HeroDetailsRequestResult heroDetails = service.GetHeroDetails(language);
 
             return heroDetails.Result;
+        }
+
+        public ItemDetailsResult GetAllItemDetails (string language = null)
+        {
+            IItemDetailsService service = _provider.GetService<ItemDetailsService>();
+            ItemDetailsRequestResult details = service.GetItemDetails(language);
+            return details.Result;
         }
     }
 }

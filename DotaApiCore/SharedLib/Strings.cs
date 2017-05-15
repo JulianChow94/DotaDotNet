@@ -9,5 +9,6 @@
         public const string GetMatchHistoryExtension = "GetMatchHistory/V001/";
         public const string GetMatchDetailsExtension = "GetMatchDetails/V001/";
         public const string GetHeroesExtension = "GetHeroes/v0001/";
+        public const string GetItemsExtension = "GetGameItems/V001/";
     }
 }
