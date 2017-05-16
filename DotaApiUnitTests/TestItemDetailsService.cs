@@ -29,6 +29,7 @@ namespace DotaApiUnitTests
             ItemDetailsResult result = Service.GetItemDetails("en-us").Result;
 
             Assert.AreEqual(result.Status, 200);
+            Assert.IsNotNull(result.Items);
         }
     }
 }
