@@ -30,12 +30,12 @@ namespace CommandLineTools
             Debug.Assert(matchDetails2 != null);
             Debug.Assert(matchDetails2.RadiantWin == false);
 
-            //DotaCore.GetHeroDetails fetches all heroes in the API
-            var heroDetails = lib.GetAllHeroDetails();
+            //DotaCore.GetHeroDetails fetches all heroes in the API with hero names localized to en_uk (en_us default)
+            var heroDetails = lib.GetAllHeroDetails("en_uk");
             Debug.Assert(heroDetails.Status == (int)HttpStatusCode.OK);
 
-            //DotaCore.GetItemDetails fetches all items in the API
-            var itemDetails = lib.GetAllItemDetails();
+            //DotaCore.GetItemDetails fetches all items in the API with item names localized to en_uk (en_us default)
+            var itemDetails = lib.GetAllItemDetails("en_us");
             Debug.Assert(itemDetails.Status == (int)HttpStatusCode.OK);
 
             Console.WriteLine("Press any key to continue");

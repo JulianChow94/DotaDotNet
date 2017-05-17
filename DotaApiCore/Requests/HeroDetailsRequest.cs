@@ -8,7 +8,7 @@
 
         public string RequestUrl { get; set; }
 
-        public HeroDetailsRequest(string apiKey, string language = null)
+        public HeroDetailsRequest(string apiKey, string language)
         {
             ApiKey = apiKey;
             Language = language;

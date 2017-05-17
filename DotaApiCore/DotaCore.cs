@@ -62,7 +62,7 @@ namespace DotaApiCore
             return details.Result;
         }
 
-        public HeroDetailsResult GetAllHeroDetails(string language = null)
+        public HeroDetailsResult GetAllHeroDetails(string language = "en_us")
         {
             IHeroDetailsService service = _provider.GetService<HeroDetailsService>();
             HeroDetailsRequestResult heroDetails = service.GetHeroDetails(language);
@@ -70,7 +70,7 @@ namespace DotaApiCore
             return heroDetails.Result;
         }
 
-        public ItemDetailsResult GetAllItemDetails (string language = null)
+        public ItemDetailsResult GetAllItemDetails (string language = "en_us")
         {
             IItemDetailsService service = _provider.GetService<ItemDetailsService>();
             ItemDetailsRequestResult details = service.GetItemDetails(language);

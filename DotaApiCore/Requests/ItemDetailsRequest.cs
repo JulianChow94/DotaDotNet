@@ -8,7 +8,7 @@ namespace DotaApiCore.Requests
 
         public string Langauge { get; set; }
 
-        public ItemDetailsRequest(string apikey, string language = null)
+        public ItemDetailsRequest(string apikey, string language)
         {
             if (string.IsNullOrEmpty(apikey) || language == null)
             {
