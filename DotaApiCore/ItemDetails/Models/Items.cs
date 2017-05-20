@@ -5,24 +5,24 @@ namespace DotaApiCore.ItemDetails.Models
     public class Items
     {
         [JsonProperty("id")]
-        public int ItemId { get; set; }
+        public int Id { get; set; }
 
         [JsonProperty("name")]
-        public string ItemName { get; set; }
+        public string Name { get; set; }
 
         [JsonProperty("cost")]
-        public int ItemCost { get; set; }
+        public int Cost { get; set; }
 
         [JsonProperty("secret_shop")]
-        public int ItemFromSecretShop { get; set; }
+        public int FromSecretShop { get; set; }
 
         [JsonProperty("side_shop")]
-        public int ItemFromSideShop { get; set; }
+        public int FromSideShop { get; set; }
 
         [JsonProperty("recipe")]
-        public int ItemIsRecipe { get; set; }
+        public int IsRecipe { get; set; }
 
         [JsonProperty("localized_name")]
-        public string ItemLocalizedName { get; set; }
+        public string LocalizedName { get; set; }
     }
 }

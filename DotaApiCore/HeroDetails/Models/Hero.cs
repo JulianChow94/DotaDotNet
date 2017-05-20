@@ -5,12 +5,12 @@ namespace DotaApiCore.HeroDetails.Models
     public class Hero
     {
         [JsonProperty("name")]
-        public string HeroName { get; set; }
+        public string Name { get; set; }
 
         [JsonProperty("id")]
-        public int HeroId { get; set; }
+        public int Id { get; set; }
 
         [JsonProperty("localized_name")]
-        public string HeroLocalizedName { get; set; }
+        public string LocalizedName { get; set; }
     }
 }
