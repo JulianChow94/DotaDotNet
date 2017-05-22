@@ -7,7 +7,7 @@ using System.Net;
 
 namespace DotaApiUnitTests
 {
-    [TestCategory("Test HeroDetailService")]
+    [TestCategory("Test HeroDetailsService")]
     [TestClass()]
     public class TestHeroDetailsService
     {
