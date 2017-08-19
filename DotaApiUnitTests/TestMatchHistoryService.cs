@@ -37,7 +37,7 @@ namespace DotaApiUnitTests
             Assert.AreEqual(result.TotalResults, 500);
             Assert.AreEqual(result.ResultsRemaining, result.TotalResults - result.NumResults);
             Assert.IsNotNull(result.Matches);
-            Assert.AreEqual(result.Matches.Length, 1);
+            Assert.AreEqual(result.Matches.Count, 1);
 
             var match = result.Matches.FirstOrDefault();
             Assert.AreEqual(match.MatchId, 3088091200);
@@ -45,7 +45,7 @@ namespace DotaApiUnitTests
             Assert.AreEqual(match.StartTime, SharedFunctions.UnixTimeStampToDateTime(1490921858));
 
             var players = match.Players;
-            Assert.AreEqual(players.Length, 10);
+            Assert.AreEqual(players.Count, 10);
             Assert.IsTrue(players.Any(x => x.AccountId == MockAccountId));
 
             foreach (var player in players)

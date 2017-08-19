@@ -1,10 +1,11 @@
 ﻿using DotaApiCore.SharedLib;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 
 namespace DotaApiCore.MatchHistory.Models
 {
-    public class Matches
+    public class Match
     {
         [JsonProperty("match_id")]
         public long MatchId { get; set; }
@@ -31,6 +32,6 @@ namespace DotaApiCore.MatchHistory.Models
         public int DireTeamId { get; set; }
 
         [JsonProperty("players")]
-        public Player[] Players { get; set; }
+        public List<Player> Players { get; set; }
     }
 }

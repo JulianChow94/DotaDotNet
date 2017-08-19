@@ -1,11 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace DotaApiCore.HeroDetails.Models
 {
     public class HeroDetailsResult
     {
         [JsonProperty("heroes")]
-        public Hero[] Heroes { get; set; }
+        public List<Hero> Heroes { get; set; }
 
         [JsonProperty("status")]
         public int Status { get; set; }
