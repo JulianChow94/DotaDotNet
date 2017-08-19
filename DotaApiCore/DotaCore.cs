@@ -7,10 +7,9 @@ using DotaApiCore.MatchDetails.Models;
 using DotaApiCore.MatchHistory;
 using DotaApiCore.MatchHistory.Models;
 using DotaApiCore.Requests;
-using DotaApiCore.SharedLib.ServiceContainer;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 using System.Runtime.CompilerServices;
+using SimpleInjector;
 
 [assembly: InternalsVisibleTo("DotaApiUnitTests")]
 
@@ -19,7 +18,7 @@ namespace DotaApiCore
     public class DotaCore
     {
         private readonly string _apiKey;
-        private IServiceProvider _provider;
+        private static Container _container;
 
         public DotaCore(string apiKey)
         {
@@ -30,49 +29,54 @@ namespace DotaApiCore
 
         private void SetUpContainers()
         {
-            ServiceContainers.Services.AddTransient<IHttpHandler, HttpClientHandler>();
-            ServiceContainers.Services.AddTransient<MatchHistoryService>(
-                provider => new MatchHistoryService(provider.GetService<IHttpHandler>(), _apiKey));
-            ServiceContainers.Services.AddTransient<MatchDetailsService>(
-                provider => new MatchDetailsService(provider.GetService<IHttpHandler>(), _apiKey));
-            ServiceContainers.Services.AddTransient<HeroDetailsService>(
-                provider => new HeroDetailsService(provider.GetService<IHttpHandler>(), _apiKey));
-            ServiceContainers.Services.AddTransient<ItemDetailsService>(
-                provider => new ItemDetailsService(provider.GetService<IHttpHandler>(), _apiKey));
+            _container = new Container();
+            _container.Register<IHttpHandler, HttpClientHandler>();
 
-            _provider = ServiceContainers.Services.BuildServiceProvider();
+            _container.Register<MatchHistoryService>(
+                () => new MatchHistoryService(_container.GetInstance<IHttpHandler>(), _apiKey));
+
+            _container.Register<MatchDetailsService>(
+                () => new MatchDetailsService(_container.GetInstance<IHttpHandler>(), _apiKey));
+
+            _container.Register<HeroDetailsService>(
+                () => new HeroDetailsService(_container.GetInstance<IHttpHandler>(), _apiKey));
+
+            _container.Register<ItemDetailsService>(
+                () => new ItemDetailsService(_container.GetInstance<IHttpHandler>(), _apiKey));
+
+            _container.Verify();
         }
 
-        public MatchHistoryResult GetMatchHistory(long? accountId = null, int? heroId = null, int? gameMode = null,
+        public static MatchHistoryResult GetMatchHistory(long? accountId = null, int? heroId = null, int? gameMode = null,
             int? skill = null, int? minPlayers = null,
             long? startingMatchId = null, int? matchesRequested = 100)
         {
-            IMatchHistoryService service = _provider.GetService<MatchHistoryService>();
+            IMatchHistoryService service = _container.GetService<MatchHistoryService>();
             MatchHistoryRequestResult matchHistory = service.GetMatchHistory(accountId, heroId, gameMode, skill,
                 minPlayers, startingMatchId, matchesRequested);
 
             return matchHistory.Result;
         }
 
-        public MatchDetailsResult GetMatchDetails(long? matchID = null)
+        public static MatchDetailsResult GetMatchDetails(long? matchID = null)
         {
-            IMatchDetailsService service = _provider.GetService<MatchDetailsService>();
+            IMatchDetailsService service = _container.GetService<MatchDetailsService>();
             MatchDetailsRequestResult details = service.GetMatchDetails(matchID);
 
             return details.Result;
         }
 
-        public HeroDetailsResult GetAllHeroDetails(string language = "en_us")
+        public static HeroDetailsResult GetAllHeroDetails(string language = "en_us")
         {
-            IHeroDetailsService service = _provider.GetService<HeroDetailsService>();
+            IHeroDetailsService service = _container.GetService<HeroDetailsService>();
             HeroDetailsRequestResult heroDetails = service.GetHeroDetails(language);
 
             return heroDetails.Result;
         }
 
-        public ItemDetailsResult GetAllItemDetails (string language = "en_us")
+        public static ItemDetailsResult GetAllItemDetails (string language = "en_us")
         {
-            IItemDetailsService service = _provider.GetService<ItemDetailsService>();
+            IItemDetailsService service = _container.GetService<ItemDetailsService>();
             ItemDetailsRequestResult details = service.GetItemDetails(language);
             return details.Result;
         }

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace DotaApiCore.MatchHistory.Models
 {
@@ -20,6 +21,6 @@ namespace DotaApiCore.MatchHistory.Models
         public int ResultsRemaining { get; set; }
 
         [JsonProperty("matches")]
-        public Matches[] Matches { get; set; }
+        public List<Match> Matches { get; set; }
     }
 }
