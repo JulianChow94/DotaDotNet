@@ -7,7 +7,6 @@ using DotaApiCore.MatchDetails.Models;
 using DotaApiCore.MatchHistory;
 using DotaApiCore.MatchHistory.Models;
 using DotaApiCore.Requests;
-using Microsoft.Extensions.DependencyInjection;
 using System.Runtime.CompilerServices;
 using SimpleInjector;
 
@@ -51,7 +50,7 @@ namespace DotaApiCore
             int? skill = null, int? minPlayers = null,
             long? startingMatchId = null, int? matchesRequested = 100)
         {
-            IMatchHistoryService service = _container.GetService<MatchHistoryService>();
+            IMatchHistoryService service = _container.GetInstance<MatchHistoryService>();
             MatchHistoryRequestResult matchHistory = service.GetMatchHistory(accountId, heroId, gameMode, skill,
                 minPlayers, startingMatchId, matchesRequested);
 
@@ -60,7 +59,7 @@ namespace DotaApiCore
 
         public static MatchDetailsResult GetMatchDetails(long? matchID = null)
         {
-            IMatchDetailsService service = _container.GetService<MatchDetailsService>();
+            IMatchDetailsService service = _container.GetInstance<MatchDetailsService>();
             MatchDetailsRequestResult details = service.GetMatchDetails(matchID);
 
             return details.Result;
@@ -68,7 +67,7 @@ namespace DotaApiCore
 
         public static HeroDetailsResult GetAllHeroDetails(string language = "en_us")
         {
-            IHeroDetailsService service = _container.GetService<HeroDetailsService>();
+            IHeroDetailsService service = _container.GetInstance<HeroDetailsService>();
             HeroDetailsRequestResult heroDetails = service.GetHeroDetails(language);
 
             return heroDetails.Result;
@@ -76,7 +75,7 @@ namespace DotaApiCore
 
         public static ItemDetailsResult GetAllItemDetails (string language = "en_us")
         {
-            IItemDetailsService service = _container.GetService<ItemDetailsService>();
+            IItemDetailsService service = _container.GetInstance<ItemDetailsService>();
             ItemDetailsRequestResult details = service.GetItemDetails(language);
             return details.Result;
         }

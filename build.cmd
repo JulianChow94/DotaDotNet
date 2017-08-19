@@ -3,7 +3,10 @@
 dotnet restore && dotnet build || CALL: DetectErrors
 
 echo.
-echo "***RUNNING UNIT TESTS**"
+echo.
+echo.
+
+echo ***RUNNING UNIT TESTS***
 echo.
 dotnet test DotaApiUnitTests/DotaApiUnitTests.csproj || CALL: DetectErrors
 
