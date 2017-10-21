@@ -17,7 +17,7 @@ namespace DotaApiCore
     public class DotaCore
     {
         private readonly string _apiKey;
-        private static Container _container;
+        private Container _container;
 
         public DotaCore(string apiKey)
         {
@@ -46,7 +46,7 @@ namespace DotaApiCore
             _container.Verify();
         }
 
-        public static MatchHistoryResult GetMatchHistory(long? accountId = null, int? heroId = null, int? gameMode = null,
+        public MatchHistoryResult GetMatchHistory(long? accountId = null, int? heroId = null, int? gameMode = null,
             int? skill = null, int? minPlayers = null,
             long? startingMatchId = null, int? matchesRequested = 100)
         {
@@ -57,7 +57,7 @@ namespace DotaApiCore
             return matchHistory.Result;
         }
 
-        public static MatchDetailsResult GetMatchDetails(long? matchID = null)
+        public MatchDetailsResult GetMatchDetails(long? matchID = null)
         {
             IMatchDetailsService service = _container.GetInstance<MatchDetailsService>();
             MatchDetailsRequestResult details = service.GetMatchDetails(matchID);
@@ -65,7 +65,7 @@ namespace DotaApiCore
             return details.Result;
         }
 
-        public static HeroDetailsResult GetAllHeroDetails(string language = "en_us")
+        public HeroDetailsResult GetAllHeroDetails(string language = "en_us")
         {
             IHeroDetailsService service = _container.GetInstance<HeroDetailsService>();
             HeroDetailsRequestResult heroDetails = service.GetHeroDetails(language);
@@ -73,7 +73,7 @@ namespace DotaApiCore
             return heroDetails.Result;
         }
 
-        public static ItemDetailsResult GetAllItemDetails (string language = "en_us")
+        public ItemDetailsResult GetAllItemDetails (string language = "en_us")
         {
             IItemDetailsService service = _container.GetInstance<ItemDetailsService>();
             ItemDetailsRequestResult details = service.GetItemDetails(language);
