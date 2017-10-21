@@ -1,13 +1,14 @@
 ﻿using DotaApiCore.SharedLib;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 
 namespace DotaApiCore.MatchDetails.Models
 {
     public class MatchDetailsResult
     {
         [JsonProperty("players")]
-        public Player[] Players { get; set; }
+        public List<Player> Players { get; set; }
 
         [JsonProperty("radiant_win")]
         public bool RadiantWin { get; set; }
@@ -21,10 +22,7 @@ namespace DotaApiCore.MatchDetails.Models
         [JsonProperty("start_time")] //UNIX timestamp
         private int _startTime { get; set; } //Anything else related to time in seconds
 
-        public DateTime StartTime
-        {
-            get { return SharedFunctions.UnixTimeStampToDateTime(_startTime); }
-        }
+        public DateTime StartTime => SharedFunctions.UnixTimeStampToDateTime(_startTime);
 
         [JsonProperty("match_id")]
         public long Matches { get; set; }
@@ -33,10 +31,10 @@ namespace DotaApiCore.MatchDetails.Models
         public long MatchSequenceNumber { get; set; }
 
         [JsonProperty("tower_status_radiant")]
-        public System.UInt16 TowerStatusRadiant { get; set; }
+        public ushort TowerStatusRadiant { get; set; }
 
         [JsonProperty("tower_status_dire")]
-        public System.UInt16 TowerStatusDire { get; set; }
+        public ushort TowerStatusDire { get; set; }
 
         [JsonProperty("barracks_status_radiant")]
         public byte BarracksStatusRadiant { get; set; }

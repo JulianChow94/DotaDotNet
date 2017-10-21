@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace DotaApiCore.MatchDetails.Models
 {
@@ -85,6 +86,6 @@ namespace DotaApiCore.MatchDetails.Models
         public int ScaledHeroHealing { get; set; }
 
         [JsonProperty("ability_upgrades")]
-        public Abilities[] AbilityUpgrades { get; set; }
+        public List<Abilities> AbilityUpgrades { get; set; }
     }
 }

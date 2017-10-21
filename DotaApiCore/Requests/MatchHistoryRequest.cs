@@ -2,31 +2,25 @@
 {
     internal class MatchHistoryRequest : Request
     {
-        /*
-         * TODO: LeagueID to be implemented as part of the "League sprint"
-         * Omitting for now
-         * Same situation for Tourney games only filter
-         */
-
         private string MatchHistoryBaseUrl { get; }
 
-        public long? AccountId { get; set; }
+        private long? AccountId { get; }
 
-        public int? HeroId { get; set; }
-
-        //TODO: Enumerize
-        public int? GameMode { get; set; }
+        private int? HeroId { get; }
 
         //TODO: Enumerize
-        public int? Skill { get; set; }
+        private int? GameMode { get; }
 
-        public int? MinimumPlayers { get; set; }
+        //TODO: Enumerize
+        private int? Skill { get; }
 
-        public long? StartAtMatchId { get; set; }
+        private int? MinimumPlayers { get; }
 
-        public int? MatchesRequested { get; set; }
+        private long? StartAtMatchId { get; }
 
-        public string RequestUrl { get; set; }
+        private int? MatchesRequested { get; }
+
+        public string RequestUrl { get; }
 
         public MatchHistoryRequest(string apiKey, long? accountId = null, int? heroId = null, int? gameMode = null, int? skill = null,
             int? minPlayers = null, long? startingMatchId = null, int? matchesRequested = 100)
