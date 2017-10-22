@@ -5,8 +5,8 @@ namespace DotaApiUnitTests.MockData.ItemDetailsService
 {
     internal static class ItemDetailsServiceMockData
     {
-        private static Assembly assem = typeof(TestItemDetailsService).GetTypeInfo().Assembly;
+        private static readonly Assembly assem = typeof(ItemDetailsServiceMockData).Assembly;
 
-        public static string ItemDetails = new StreamReader(assem.GetManifestResourceStream("DotaApiUnitTests.MockData.ItemDetailsService.itemdetails.json")).ReadToEnd();
+        public static readonly string ItemDetails = new StreamReader(assem.GetManifestResourceStream("DotaApiUnitTests.MockData.ItemDetailsService.itemdetails.json")).ReadToEnd();
     }
 }

@@ -5,7 +5,7 @@ namespace DotaApiUnitTests.MockData
 {
     internal static class MatchDetailsServiceMockData
     {
-        private static Assembly assem = typeof(TestMatchDetailsService).GetTypeInfo().Assembly;
+        private static readonly Assembly assem = typeof(MatchDetailsServiceMockData).Assembly;
 
         public static string OldMatch = new StreamReader(assem.GetManifestResourceStream("DotaApiUnitTests.MockData.MatchDetailsService.oldmatch.json")).ReadToEnd();
         public static string NewMatch = new StreamReader(assem.GetManifestResourceStream("DotaApiUnitTests.MockData.MatchDetailsService.newmatch.json")).ReadToEnd();

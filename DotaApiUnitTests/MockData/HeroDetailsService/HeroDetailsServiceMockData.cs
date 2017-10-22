@@ -5,11 +5,8 @@ namespace DotaApiUnitTests.MockData.HeroDetailsService
 {
     internal static class HeroDetailsServiceMockData
     {
-        private static readonly Assembly asm = typeof(TestMatchDetailsService).GetTypeInfo().Assembly;
+        private static readonly Assembly assem = typeof(HeroDetailsServiceMockData).Assembly;
 
-        public static string GenericSuccess =
-            new StreamReader(
-                asm.GetManifestResourceStream(
-                    "DotaApiUnitTests.MockData.HeroDetailsService.HeroDetailsResponse.json")).ReadToEnd();
+        public static string GenericSuccess = new StreamReader(assem.GetManifestResourceStream("DotaApiUnitTests.MockData.HeroDetailsService.HeroDetailsResponse.json")).ReadToEnd();
     }
 }
